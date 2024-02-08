@@ -1,0 +1,30 @@
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Dz2\bin\Debug\net7.0\Dz2.exe
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Dz2\bin\Debug\net7.0\Dz2.deps.json
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Dz2\bin\Debug\net7.0\Dz2.runtimeconfig.json
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Dz2\bin\Debug\net7.0\Dz2.dll
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Dz2\bin\Debug\net7.0\Dz2.pdb
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Dz2\obj\Debug\net7.0\Dz2.GeneratedMSBuildEditorConfig.editorconfig
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Dz2\obj\Debug\net7.0\Dz2.AssemblyInfoInputs.cache
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Dz2\obj\Debug\net7.0\Dz2.AssemblyInfo.cs
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Dz2\obj\Debug\net7.0\Dz2.csproj.CoreCompileInputs.cache
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Dz2\obj\Debug\net7.0\Dz2.sourcelink.json
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Dz2\obj\Debug\net7.0\Dz2.dll
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Dz2\obj\Debug\net7.0\refint\Dz2.dll
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Dz2\obj\Debug\net7.0\Dz2.pdb
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Dz2\obj\Debug\net7.0\Dz2.genruntimeconfig.cache
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Dz2\obj\Debug\net7.0\ref\Dz2.dll
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Dz2\obj\Debug\net7.0\Dz2.GeneratedMSBuildEditorConfig.editorconfig
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Dz2\obj\Debug\net7.0\Dz2.AssemblyInfoInputs.cache
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Dz2\obj\Debug\net7.0\Dz2.AssemblyInfo.cs
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Dz2\obj\Debug\net7.0\Dz2.csproj.CoreCompileInputs.cache
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Dz2\obj\Debug\net7.0\Dz2.sourcelink.json
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Dz2\obj\Debug\net7.0\Dz2.dll
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Dz2\obj\Debug\net7.0\refint\Dz2.dll
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Dz2\obj\Debug\net7.0\Dz2.pdb
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Dz2\bin\Debug\net7.0\Dz2.exe
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Dz2\bin\Debug\net7.0\Dz2.deps.json
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Dz2\bin\Debug\net7.0\Dz2.runtimeconfig.json
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Dz2\bin\Debug\net7.0\Dz2.dll
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Dz2\bin\Debug\net7.0\Dz2.pdb
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Dz2\obj\Debug\net7.0\Dz2.genruntimeconfig.cache
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Dz2\obj\Debug\net7.0\ref\Dz2.dll

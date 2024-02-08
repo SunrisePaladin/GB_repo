@@ -1,0 +1,6 @@
+int sum=0, i=0, arr = [2,5,13,7,6,4]
+while (i < arr.length()){
+	sum += arr[i]
+	i++
+}
+out << sum/arr.length()

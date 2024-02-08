@@ -1,0 +1,14 @@
+E:\Projects\C#\GeekBrains\Шарпы\Практика041223\Практика041223\bin\Debug\net7.0\Практика041223.exe
+E:\Projects\C#\GeekBrains\Шарпы\Практика041223\Практика041223\bin\Debug\net7.0\Практика041223.deps.json
+E:\Projects\C#\GeekBrains\Шарпы\Практика041223\Практика041223\bin\Debug\net7.0\Практика041223.runtimeconfig.json
+E:\Projects\C#\GeekBrains\Шарпы\Практика041223\Практика041223\bin\Debug\net7.0\Практика041223.dll
+E:\Projects\C#\GeekBrains\Шарпы\Практика041223\Практика041223\bin\Debug\net7.0\Практика041223.pdb
+E:\Projects\C#\GeekBrains\Шарпы\Практика041223\Практика041223\obj\Debug\net7.0\Практика041223.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\C#\GeekBrains\Шарпы\Практика041223\Практика041223\obj\Debug\net7.0\Практика041223.AssemblyInfoInputs.cache
+E:\Projects\C#\GeekBrains\Шарпы\Практика041223\Практика041223\obj\Debug\net7.0\Практика041223.AssemblyInfo.cs
+E:\Projects\C#\GeekBrains\Шарпы\Практика041223\Практика041223\obj\Debug\net7.0\Практика041223.csproj.CoreCompileInputs.cache
+E:\Projects\C#\GeekBrains\Шарпы\Практика041223\Практика041223\obj\Debug\net7.0\Практика041223.dll
+E:\Projects\C#\GeekBrains\Шарпы\Практика041223\Практика041223\obj\Debug\net7.0\refint\Практика041223.dll
+E:\Projects\C#\GeekBrains\Шарпы\Практика041223\Практика041223\obj\Debug\net7.0\Практика041223.pdb
+E:\Projects\C#\GeekBrains\Шарпы\Практика041223\Практика041223\obj\Debug\net7.0\Практика041223.genruntimeconfig.cache
+E:\Projects\C#\GeekBrains\Шарпы\Практика041223\Практика041223\obj\Debug\net7.0\ref\Практика041223.dll

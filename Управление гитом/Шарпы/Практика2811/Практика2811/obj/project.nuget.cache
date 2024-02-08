@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "Yb3beZb+5EkNicSSbFXN86unslrPMNwXXkr3lbCZuV6/rQNV333qr/RAG8axHTcRSIeo+v3rN2eJN4NwXo11+g==",
+  "success": true,
+  "projectFilePath": "A:\\Учёба GB\\Прога\\GB_repo\\Шарпы\\Практика2811\\Практика2811\\Практика2811.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ArtSolo\\.nuget\\packages\\extreme.numerics\\8.1.22\\extreme.numerics.8.1.22.nupkg.sha512",
+    "C:\\Users\\ArtSolo\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\ArtSolo\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
+    "C:\\Users\\ArtSolo\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\ArtSolo\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

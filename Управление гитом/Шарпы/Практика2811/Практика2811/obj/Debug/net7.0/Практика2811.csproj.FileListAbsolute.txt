@@ -1,0 +1,36 @@
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Практика2811\bin\Debug\net7.0\Практика2811.exe
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Практика2811\bin\Debug\net7.0\Практика2811.deps.json
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Практика2811\bin\Debug\net7.0\Практика2811.runtimeconfig.json
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Практика2811\bin\Debug\net7.0\Практика2811.dll
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Практика2811\bin\Debug\net7.0\Практика2811.pdb
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Практика2811\obj\Debug\net7.0\Практика2811.GeneratedMSBuildEditorConfig.editorconfig
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Практика2811\obj\Debug\net7.0\Практика2811.AssemblyInfoInputs.cache
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Практика2811\obj\Debug\net7.0\Практика2811.AssemblyInfo.cs
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Практика2811\obj\Debug\net7.0\Практика2811.csproj.CoreCompileInputs.cache
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Практика2811\obj\Debug\net7.0\Практика2811.sourcelink.json
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Практика2811\obj\Debug\net7.0\Практика2811.dll
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Практика2811\obj\Debug\net7.0\refint\Практика2811.dll
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Практика2811\obj\Debug\net7.0\Практика2811.pdb
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Практика2811\obj\Debug\net7.0\Практика2811.genruntimeconfig.cache
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Практика2811\obj\Debug\net7.0\ref\Практика2811.dll
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Практика2811\bin\Debug\net7.0\Extreme.Numerics.dll
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Практика2811\obj\Debug\net7.0\Практика2811.csproj.AssemblyReference.cache
+A:\Учёба GB\Прога\GB_repo\Шарпы\Двумерные массивы\Практика2811\Практика2811\obj\Debug\net7.0\Практика2811.csproj.CopyComplete
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Практика2811\bin\Debug\net7.0\Практика2811.exe
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Практика2811\bin\Debug\net7.0\Практика2811.deps.json
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Практика2811\bin\Debug\net7.0\Практика2811.runtimeconfig.json
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Практика2811\bin\Debug\net7.0\Практика2811.dll
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Практика2811\bin\Debug\net7.0\Практика2811.pdb
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Практика2811\bin\Debug\net7.0\Extreme.Numerics.dll
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Практика2811\obj\Debug\net7.0\Практика2811.csproj.AssemblyReference.cache
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Практика2811\obj\Debug\net7.0\Практика2811.GeneratedMSBuildEditorConfig.editorconfig
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Практика2811\obj\Debug\net7.0\Практика2811.AssemblyInfoInputs.cache
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Практика2811\obj\Debug\net7.0\Практика2811.AssemblyInfo.cs
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Практика2811\obj\Debug\net7.0\Практика2811.csproj.CoreCompileInputs.cache
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Практика2811\obj\Debug\net7.0\Практика2811.sourcelink.json
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Практика2811\obj\Debug\net7.0\Практика2811.csproj.CopyComplete
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Практика2811\obj\Debug\net7.0\Практика2811.dll
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Практика2811\obj\Debug\net7.0\refint\Практика2811.dll
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Практика2811\obj\Debug\net7.0\Практика2811.pdb
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Практика2811\obj\Debug\net7.0\Практика2811.genruntimeconfig.cache
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика2811\Практика2811\obj\Debug\net7.0\ref\Практика2811.dll

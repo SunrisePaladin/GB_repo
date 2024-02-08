@@ -1,0 +1,48 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="30"/>
+        </Style>
+        <ControlTemplate x:Key="buttonTMP1" TargetType="Button">
+            <Border Background="IndianRed" CornerRadius="5">
+                <ContentControl Content="Hi" HorizontalAlignment="Center"/>
+            </Border>
+        </ControlTemplate>
+        <ControlTemplate x:Key="buttonTMP2" TargetType="Button">
+            <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                <ContentControl Content="{TemplateBinding Content}" HorizontalAlignment="Center"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Background" Value="Red" />
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="FontSize" Value="20"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+    <StackPanel>
+        <Button Content="11111"/>
+        <Button Content="2" Background="DodgerBlue"/>
+        <Button Content="2.0" Background="DodgerBlue"/>
+        <Button Content="3" Template="{StaticResource buttonTMP1}"/>
+        <Button Content="4" Template="{StaticResource buttonTMP2}" Background="Aqua"/>
+        <Button Content="5">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="LightPink" CornerRadius="10">
+                        <ContentControl Content="{TemplateBinding Content}" HorizontalAlignment="Right"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </StackPanel>
+</Window>

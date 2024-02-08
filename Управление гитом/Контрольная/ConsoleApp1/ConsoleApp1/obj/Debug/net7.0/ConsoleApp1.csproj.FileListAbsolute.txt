@@ -1,0 +1,15 @@
+A:\Учёба GB\Прога\GB_repo\Контрольная\ConsoleApp1\ConsoleApp1\bin\Debug\net7.0\ConsoleApp1.exe
+A:\Учёба GB\Прога\GB_repo\Контрольная\ConsoleApp1\ConsoleApp1\bin\Debug\net7.0\ConsoleApp1.deps.json
+A:\Учёба GB\Прога\GB_repo\Контрольная\ConsoleApp1\ConsoleApp1\bin\Debug\net7.0\ConsoleApp1.runtimeconfig.json
+A:\Учёба GB\Прога\GB_repo\Контрольная\ConsoleApp1\ConsoleApp1\bin\Debug\net7.0\ConsoleApp1.dll
+A:\Учёба GB\Прога\GB_repo\Контрольная\ConsoleApp1\ConsoleApp1\bin\Debug\net7.0\ConsoleApp1.pdb
+A:\Учёба GB\Прога\GB_repo\Контрольная\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+A:\Учёба GB\Прога\GB_repo\Контрольная\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.AssemblyInfoInputs.cache
+A:\Учёба GB\Прога\GB_repo\Контрольная\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.AssemblyInfo.cs
+A:\Учёба GB\Прога\GB_repo\Контрольная\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.csproj.CoreCompileInputs.cache
+A:\Учёба GB\Прога\GB_repo\Контрольная\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.sourcelink.json
+A:\Учёба GB\Прога\GB_repo\Контрольная\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.dll
+A:\Учёба GB\Прога\GB_repo\Контрольная\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\refint\ConsoleApp1.dll
+A:\Учёба GB\Прога\GB_repo\Контрольная\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.pdb
+A:\Учёба GB\Прога\GB_repo\Контрольная\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.genruntimeconfig.cache
+A:\Учёба GB\Прога\GB_repo\Контрольная\ConsoleApp1\ConsoleApp1\obj\Debug\net7.0\ref\ConsoleApp1.dll

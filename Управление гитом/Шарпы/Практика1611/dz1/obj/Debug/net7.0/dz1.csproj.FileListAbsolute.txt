@@ -1,0 +1,15 @@
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика1611\dz1\bin\Debug\net7.0\dz1.exe
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика1611\dz1\bin\Debug\net7.0\dz1.deps.json
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика1611\dz1\bin\Debug\net7.0\dz1.runtimeconfig.json
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика1611\dz1\bin\Debug\net7.0\dz1.dll
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика1611\dz1\bin\Debug\net7.0\dz1.pdb
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика1611\dz1\obj\Debug\net7.0\dz1.GeneratedMSBuildEditorConfig.editorconfig
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика1611\dz1\obj\Debug\net7.0\dz1.AssemblyInfoInputs.cache
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика1611\dz1\obj\Debug\net7.0\dz1.AssemblyInfo.cs
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика1611\dz1\obj\Debug\net7.0\dz1.csproj.CoreCompileInputs.cache
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика1611\dz1\obj\Debug\net7.0\dz1.sourcelink.json
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика1611\dz1\obj\Debug\net7.0\dz1.dll
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика1611\dz1\obj\Debug\net7.0\refint\dz1.dll
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика1611\dz1\obj\Debug\net7.0\dz1.pdb
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика1611\dz1\obj\Debug\net7.0\dz1.genruntimeconfig.cache
+A:\Учёба GB\Прога\GB_repo\Шарпы\Практика1611\dz1\obj\Debug\net7.0\ref\dz1.dll
