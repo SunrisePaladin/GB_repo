@@ -7,8 +7,8 @@ public class program {
         Scanner scanner = new Scanner(System.in);
         System.out.println("name: ");
         String name = scanner.nextLine();
-
         System.out.printf("Hello %s", name);
+        scanner.close();
     }
 }
 
