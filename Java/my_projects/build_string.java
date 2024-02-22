@@ -1,12 +1,15 @@
+import java.io.FileWriter;
+
 public class build_string {
     public static void main(String[] args){
-        //task1
-
+        
         // int n=500_000;
         // char c1 = 's';
         // char c2 = 'W';
         //String s = "aaaaaabbbccddddeeeeeee";
+        //String pal = "amogus";
 
+        //task1
         // long start = System.currentTimeMillis();
         // //System.out.println(getAlternatingCharsStr(n, c1, c2));
         // getAlternatingCharsStr(n, c1, c2);
@@ -20,6 +23,58 @@ public class build_string {
         //System.out.println(pack(s));
 
         //task3
+        //System.out.println(Is_pal(pal));
+
+        //task4
+        //String out = (repeat_word(pal, 100));
+        //System.out.println(out);
+        //write_to_file(out, "amogus.txt");
+
+        //task5
+    }
+
+    public static void write_to_file(String s, String filename){
+        try(FileWriter fout = new FileWriter(filename, false)){
+            fout.write(s);
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
+
+        // FileWriter fout = null;
+        // try{
+        //     fout = new FileWriter(filename, false);
+        //     fout.write(s);
+        // }
+        // catch(Exception e){
+        //     e.printStackTrace();
+        // }
+        // finally{
+        //     try{
+        //         fout.close();
+        //     }
+        //     catch(Exception e){
+        //         e.printStackTrace();
+        //     }
+        // }
+    }
+
+    public static String repeat_word(String word, int count){
+        StringBuilder sb = new StringBuilder();
+        //String res = String.join("", Collections.nCopies(count, word));
+        //return res;
+        for(int i=0; i<count; i++){
+            sb.append(word);
+        }
+        return sb.toString();
+    }
+
+    public static Boolean Is_pal(String s){
+        for (int i=0, k = s.length()-1; i<k; i++, k--){
+            if (s.charAt(i) != s.charAt(k)) return false;
+        }
+        return true;
     }
 
     public static String pack(String s){
