@@ -1,6 +1,13 @@
 import java.io.FileWriter;
+import java.io.File;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
-public class build_string {
+public class sem2 {
+    static Logger logger = Logger.getLogger(sem2.class.getName());
+    int a = 50;
     public static void main(String[] args){
         
         // int n=500_000;
@@ -31,6 +38,39 @@ public class build_string {
         //write_to_file(out, "amogus.txt");
 
         //task5
+        getLog();
+        writeArrToFile(logfile("."), ".");
+    }
+
+    public static void getLog(){
+        try {
+            FileHandler fileHandler = new FileHandler("log.txt");
+            logger.addHandler(fileHandler);
+            SimpleFormatter formatter = new SimpleFormatter();
+            fileHandler.setFormatter(formatter);
+        }
+        catch(Exception e){
+            
+        }
+    }
+
+    public static void writeArrToFile(String[] arr, String filename){
+        try (FileWriter fw = new FileWriter(filename)){
+            for (String st : arr) {
+                fw.write(st);
+                fw.write(System.lineSeparator());
+            }
+        }
+        catch(Exception e){
+            //e.getStackTrace();
+            logger.log(Level.WARNING, e.getMessage());
+        }
+
+    }
+
+    public static String[] logfile(String foldername){
+        File fn = new File(foldername);
+        return fn.list();
     }
 
     public static void write_to_file(String s, String filename){

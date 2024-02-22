@@ -1,6 +1,4 @@
 amogus.txt
-log.txt
-log.txt.lck
 program.class
 program.java
 resolve.txt

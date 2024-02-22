@@ -1,0 +1,2 @@
+февр. 22, 2024 7:27:57 PM sem2 writeArrToFile
+WARNING: . (Отказано в доступе)
