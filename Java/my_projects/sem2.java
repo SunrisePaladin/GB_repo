@@ -1,4 +1,6 @@
 import java.io.FileWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.io.File;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
@@ -15,6 +17,7 @@ public class sem2 {
         // char c2 = 'W';
         //String s = "aaaaaabbbccddddeeeeeee";
         //String pal = "amogus";
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
         //task1
         // long start = System.currentTimeMillis();
@@ -41,6 +44,8 @@ public class sem2 {
         getLog();
         writeArrToFile(logfile("."), ".");
     }
+
+    
 
     public static void getLog(){
         try {
