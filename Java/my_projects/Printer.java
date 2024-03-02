@@ -25,34 +25,39 @@ class MergeSort {
         //return mergeArray(arrayB, arrayC);
     }
     public int[] mergeArray(int[] arrayA, int[] arrayB) {
-        int sizeA = (Integer)arrayA.length;
-        int sizeB = (Integer)arrayB.length;
+        
         int [] arrayC = new int[arrayA.length + arrayB.length];
         int positionA = 0, positionB = 0;
+        int sizeA = arrayA.length;
+        int sizeB = arrayB.length;
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < arrayC.length; i++) {
+            System.out.println(positionA);
+            System.out.println(positionB);
             if (positionA == sizeA){
                 arrayC[i] = arrayB[i - positionB];    
-                sb.append(i).append(" pos1");
+                sb.append(i).append(" pos1 ").append(positionA).append(" ").append(positionB).append("\n");
                 positionB++;
             } 
             else if (positionB == sizeB) {
                 arrayC[i] = arrayA[i - positionA];
-                sb.append(i).append(" pos2");
+                sb.append(i).append(" pos2 ").append(positionA).append(" ").append(positionB).append("\n");
                 positionA++;
             } 
             else if (arrayA[i - positionA] < arrayB[i - positionB]) {
                 arrayC[i] = arrayA[i - positionA];
-                sb.append(i).append(" pos3");
+                sb.append(i).append(" pos3 ").append(positionA).append(" ").append(positionB).append("\n");
                 positionB++;
             } 
             else {
                 arrayC[i] = arrayB[i - positionB];
-                sb.append(i).append(" pos4");
+                sb.append(i).append(" pos4 ").append(positionA).append(" ").append(positionB).append("\n");
                 positionA++;
             }
+            //System.out.println(sb.toString());
             
         }
+        
         for (int i = 0; i < arrayC.length ; i++) {
             System.out.print(arrayC[i] + " ");
         }
@@ -73,7 +78,12 @@ public class Printer{
         }
         int [] b = new int[]{8, 9, 0, -1, 10, 7};
         MergeSort answer = new MergeSort();
-        String itresume_res = Arrays.toString(answer.mergeArray(a, b));
+        int [] c = answer.mergeArray(a, b);
+        
+        // for (int i = 0; i < c.length ; i++) {
+        //     System.out.print(c[i] + " ");
+        // }
+
         //String itresume_res = Arrays.toString(answer.mergeSort(a));
         //System.out.println(itresume_res);
     }
