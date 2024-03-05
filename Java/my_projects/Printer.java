@@ -1,90 +1,65 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-class MergeSort {
-    public int[] mergeSort(int[] arrayA) {
-        if (arrayA == null) {
-            return null;
-        }
-        if (arrayA.length < 2) {
-            return arrayA;
-        }
-        int [] arrayB = new int[arrayA.length / 2];
-        System.arraycopy(arrayA, 0, arrayB, 0, arrayA.length / 2);
-        int [] arrayC = new int[arrayA.length - arrayA.length / 2];
-        System.arraycopy(arrayA, arrayA.length / 2, arrayC, 0, arrayA.length - arrayA.length / 2);
+class PhoneBook {
+    private static HashMap<String, ArrayList<Integer>> phoneBook = new HashMap<>();
 
-        for (int i = 0; i < arrayB.length ; i++) {
-            System.out.print(arrayB[i] + " ");
+    public void add(String name, Integer phoneNum) {
+        if (phoneBook.containsKey(name)) {
+            ArrayList<Integer> tmp = phoneBook.get(name);
+            tmp.add(phoneNum);
+            phoneBook.replace(name, tmp);
+        } else {
+            ArrayList<Integer> tmp = new ArrayList<>();
+            tmp.add(phoneNum);
+            phoneBook.put(name, tmp);
         }
-        for (int i = 0; i < arrayC.length ; i++) {
-            System.out.print(arrayC[i] + " ");
-        }
-        arrayB = mergeSort(arrayB);
-        arrayC = mergeSort(arrayC);
-        return arrayB;
-        //return mergeArray(arrayB, arrayC);
+        // Введите свое решение ниже
+
     }
-    public int[] mergeArray(int[] arrayA, int[] arrayB) {
-        
-        int [] arrayC = new int[arrayA.length + arrayB.length];
-        int positionA = 0, positionB = 0;
-        int sizeA = arrayA.length;
-        int sizeB = arrayB.length;
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < arrayC.length; i++) {
-            System.out.println(positionA);
-            System.out.println(positionB);
-            if (positionA == sizeA){
-                arrayC[i] = arrayB[i - positionB];    
-                sb.append(i).append(" pos1 ").append(positionA).append(" ").append(positionB).append("\n");
-                positionB++;
-            } 
-            else if (positionB == sizeB) {
-                arrayC[i] = arrayA[i - positionA];
-                sb.append(i).append(" pos2 ").append(positionA).append(" ").append(positionB).append("\n");
-                positionA++;
-            } 
-            else if (arrayA[i - positionA] < arrayB[i - positionB]) {
-                arrayC[i] = arrayA[i - positionA];
-                sb.append(i).append(" pos3 ").append(positionA).append(" ").append(positionB).append("\n");
-                positionB++;
-            } 
-            else {
-                arrayC[i] = arrayB[i - positionB];
-                sb.append(i).append(" pos4 ").append(positionA).append(" ").append(positionB).append("\n");
-                positionA++;
-            }
-            //System.out.println(sb.toString());
-            
+
+    public ArrayList<Integer> find(String name) {
+        // Введите свое решение ниже
+        if (phoneBook.containsKey(name)) {
+            return phoneBook.get(name);
         }
-        
-        for (int i = 0; i < arrayC.length ; i++) {
-            System.out.print(arrayC[i] + " ");
-        }
-        return arrayC;
+        else return new ArrayList<>();
+    }
+
+    public static HashMap<String, ArrayList<Integer>> getPhoneBook() {
+        // Введите свое решение ниже
+        return phoneBook;
     }
 }
+// Не удаляйте этот класс - он нужен для
 
-// Не удаляйте этот класс - он нужен для вывода результатов на экран и проверки
-public class Printer{ 
-    public static void main(String[] args) { 
-        int[] a;
+public class Printer {
+    public static void main(String[] args) {
+        String name1;
+        String name2;
+        int phone1;
+        int phone2;
 
         if (args.length == 0) {
-        // При отправке кода на Выполнение, вы можете варьировать эти параметры
-            a = new int[]{5, 1, 6, 2, 3, 4};
-        } else {
-            a = Arrays.stream(args[0].split(", ")).mapToInt(Integer::parseInt).toArray();
+            name1 = "Ivanov";
+            name2 = "Petrov";
+            phone1 = 123456;
+            phone2 = 654321;
+        } 
+        else {
+            name1 = args[0];
+            name2 = args[1];
+            phone1 = Integer.parseInt(args[2]);
+            phone2 = Integer.parseInt(args[3]);
         }
-        int [] b = new int[]{8, 9, 0, -1, 10, 7};
-        MergeSort answer = new MergeSort();
-        int [] c = answer.mergeArray(a, b);
-        
-        // for (int i = 0; i < c.length ; i++) {
-        //     System.out.print(c[i] + " ");
-        // }
 
-        //String itresume_res = Arrays.toString(answer.mergeSort(a));
-        //System.out.println(itresume_res);
+        PhoneBook myPhoneBook = new PhoneBook();
+        myPhoneBook.add(name1, phone1);
+        myPhoneBook.add(name1, phone2);
+        myPhoneBook.add(name2, phone2);
+
+        System.out.println(myPhoneBook.find(name1));
+        System.out.println(PhoneBook.getPhoneBook());
+        System.out.println(myPhoneBook.find("Me"));
     }
 }
