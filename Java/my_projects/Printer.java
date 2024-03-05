@@ -1,55 +1,40 @@
-import java.util.HashMap;
+import java.util.Arrays;
+import java.util.*;
 
-class NamesCounter {
-    private HashMap<String, Integer> names = new HashMap<>();
-
-    // Метод для добавления имени в HashMap
-    public void addName(String name) {
+class HeapSort {
+    public static void buildTree(int[] tree, int sortLength) {
         // Введите свое решение ниже
-        if (names.containsKey(name)){
-            names.replace(name, names.get(name)+1);
+
+    }
+
+    public static void heapSort(int[] sortArray, int sortLength) {
+        // Введите свое решение ниже
+        for (int i = 0; i < sortLength - 1; i++){
+            for (int j = 0; j < sortLength - i - 1; j++){ 
+                if (sortArray[j] > sortArray[j + 1]){
+                    int tmp=sortArray[j];
+                    sortArray[j]=sortArray[j+1];
+                    sortArray[j+1]=tmp;
+                }
+            }
         }
-        else names.put(name, 1);
-    }
-
-    // Метод для вывода содержимого HashMap
-    public void showNamesOccurrences() {
-        // Введите свое решение ниже
-        System.out.println(names);
-    }
 }
 
-// Не удаляйте и не меняйте метод Main!
+    // Не удаляйте и не меняйте метод Main!
 public class Printer {
     public static void main(String[] args) {
-        String name1;
-        String name2;
-        String name3;
-        String name4;
-        String name5;
+        int[] initArray;
 
         if (args.length == 0) {
-            name1 = "Elena";
-            name2 = "Elena";
-            name3 = "Elena";
-            name4 = "Elena";
-            name5 = "Ivan";
+            initArray = new int[] { 17, 32, 1, 4, 25, 17, 0, 3, 10, 7, 64, 1 };
         } else {
-            name1 = args[0];
-            name2 = args[1];
-            name3 = args[2];
-            name4 = args[3];
-            name5 = args[4];
+            initArray = Arrays.stream(args[0].split(" ")).mapToInt(Integer::parseInt).toArray();
         }
-        NamesCounter namesCounter = new NamesCounter();
 
-        namesCounter.addName(name1);
-        namesCounter.addName(name2);
-        namesCounter.addName(name3);
-        namesCounter.addName(name4);
-
-        namesCounter.addName(name5);
-
-        namesCounter.showNamesOccurrences();
+        System.out.println("Initial array:");
+        System.out.println(Arrays.toString(initArray));
+        HeapSort.heapSort(initArray, initArray.length);
+        System.out.println("Sorted array:");
+        System.out.println(Arrays.toString(initArray));
     }
 }
