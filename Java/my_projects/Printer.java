@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.*;
 
 class HeapSort {
     public static void buildTree(int[] tree, int sortLength) {
@@ -37,4 +36,5 @@ public class Printer {
         System.out.println("Sorted array:");
         System.out.println(Arrays.toString(initArray));
     }
+}
 }
