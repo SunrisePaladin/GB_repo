@@ -25,6 +25,13 @@ public class Program {
         Infantry.add(new Spearman("Homer"));
         Infantry.add(new Wizard("Gandalf"));
 
-        
+        for (TemplatePerson person : Villagers){
+            System.out.println("Команда деревенщин: " + person.toString());
+        }
+
+        for (TemplatePerson person : Infantry){
+            System.out.println("Команда бойцов: " + person.toString());
+        }
+
     }
 }
