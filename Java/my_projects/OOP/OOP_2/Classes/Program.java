@@ -3,7 +3,6 @@ package OOP.OOP_2.Classes;
 import java.util.ArrayList;
 import java.util.List;
 
-import OOP.OOP_2.Classes.*;
 import OOP.OOP_2.Classes.Infantry.Sniper;
 import OOP.OOP_2.Classes.Infantry.Spearman;
 import OOP.OOP_2.Classes.Infantry.Wizard;
@@ -26,11 +25,11 @@ public class Program {
         Infantry.add(new Wizard("Gandalf"));
 
         for (TemplatePerson person : Villagers){
-            System.out.println("Команда деревенщин: " + person.toString());
+            System.out.println("Команда деревенщин: " + person.getClass().getSimpleName() + " " + person.toString());
         }
 
         for (TemplatePerson person : Infantry){
-            System.out.println("Команда бойцов: " + person.toString());
+            System.out.println("Команда бойцов: " + person.getClass().getSimpleName() + " " + person.toString());
         }
 
     }

@@ -17,7 +17,7 @@ public class sem2 {
         // char c2 = 'W';
         //String s = "aaaaaabbbccddddeeeeeee";
         //String pal = "amogus";
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        //DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
         //task1
         // long start = System.currentTimeMillis();

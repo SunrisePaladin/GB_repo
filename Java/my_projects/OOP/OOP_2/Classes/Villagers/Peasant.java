@@ -20,7 +20,7 @@ public class Peasant extends TemplatePerson{
     }
 
     public void take_damage(int damage) {
-        int res_damage = this.attack * ( rand.nextInt(100)<reflectance?0:1) - 2 *defence; //имеет удвоенную защиту
+        int res_damage = damage * ( rand.nextInt(100)<reflectance?0:1) - 2 *defence; //имеет удвоенную защиту
         if (res_damage <= 0) {
             System.out.printf("%s %s не получает урона \n", this.getClass().getSimpleName(), this.toString(), res_damage);
             res_damage = 0;
@@ -34,6 +34,9 @@ public class Peasant extends TemplatePerson{
                 health -= diff;
             }
             System.out.printf("%s %s получает урон %d \n", this.getClass().getSimpleName(), this.toString(), res_damage);
+        }
+        if (health <= 0) {
+            die("От полученного урона");
         }
     }
 
