@@ -1,10 +1,10 @@
-package OOP.OOP_2.Classes.Infantry;
+package OOP.OOP_2.Classes.RangeClass;
 
 import java.util.HashMap;
 
 import OOP.OOP_2.Classes.TemplatePerson;
 
-public class Wizard extends TemplatePerson implements Infantry {
+public class Wizard extends TemplatePerson implements RangeHero {
 
     @Override
     public String toString() {
@@ -12,16 +12,17 @@ public class Wizard extends TemplatePerson implements Infantry {
     }
 
     int mana = 100;
-    int maxMana = 100;
+    int manaMax = 100;
 
     public Wizard(String name) {
-        super(name, 150, 0, 30, 10, 2, 0);
+        super(name, 100, 35, 10, 2, 0,
+        7, 1);
         mana = 100;
-        maxMana = 100;
+        manaMax = 100;
     }
 
     public void range_attack(TemplatePerson target) {
-        int damage = this.attack * rand.nextInt(1, pierce);
+        int damage = attack * rand.nextInt(1, pierce);
         System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), this.toString());
         target.take_damage(damage);
     }
@@ -32,32 +33,24 @@ public class Wizard extends TemplatePerson implements Infantry {
             System.out.printf("%s %s не получает урона \n", this.getClass().getSimpleName(), this.toString(),
                     res_damage);
             res_damage = 0;
-        } else {
-            if (protection - res_damage >= 0) {
-                protection -= res_damage;
-            } else {
-                int diff = res_damage - protection;
-                health -= diff;
-            }
+        } 
+        else {
+            health -= res_damage;
             System.out.printf("%s %s получает урон %d \n", this.getClass().getSimpleName(), this.toString(),
                     res_damage);
         }
-        if (health <= 0) {
+        if (health <= 0)
+        {
             die("От полученного урона");
         }
     }
 
-    // лечение
-    public void hide() {
-        if (health + 40 <= healthMax)
-            health += 40;
-        else
-            health = healthMax;
-        if (protection + 40 <= protectionMax)
-            protection += 40;
-        else
-            protection = protectionMax;
-        mana += 50;
+    // подготовка
+    public void prepare() {
+        if (health + 40 <= healthMax) health += 40;
+        else health = healthMax;
+        if (mana + 50 <= manaMax) mana += 50;
+        if (pierce < 4) pierce += 1;
     }
 
     // проклятье + чёрная магия
@@ -83,7 +76,8 @@ public class Wizard extends TemplatePerson implements Infantry {
                     if (tmp.get("attack") - 30 > 0) {
                         tmp.replace("attack", tmp.get("attack") - 30);
                         target.change_stats(tmp);
-                    } else {
+                    } 
+                    else {
                         tmp.replace("attack", 0);
                         target.change_stats(tmp);
                     }

@@ -1,34 +1,34 @@
 package OOP.OOP_2.Classes;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import OOP.OOP_2.Classes.Infantry.Crossbowman;
-import OOP.OOP_2.Classes.Infantry.Sniper;
-import OOP.OOP_2.Classes.Infantry.Wizard;
-import OOP.OOP_2.Classes.Melee.Monk;
-import OOP.OOP_2.Classes.Melee.Rogue;
-import OOP.OOP_2.Classes.Melee.Spearman;
+import OOP.OOP_2.Classes.MeleeClass.Monk;
+import OOP.OOP_2.Classes.MeleeClass.Rogue;
+import OOP.OOP_2.Classes.MeleeClass.Spearman;
+import OOP.OOP_2.Classes.RangeClass.Crossbowman;
+import OOP.OOP_2.Classes.RangeClass.Sniper;
+import OOP.OOP_2.Classes.RangeClass.Wizard;
 
 public class Program {
     public static void main(String[] args) {
-        List<TemplatePerson> Villagers = new ArrayList<>();
-        Villagers.add(new Peasant("John"));
-        Villagers.add(new Crossbowman("Oleg"));
-        Villagers.add(new Rogue("Dany"));
-        Villagers.add(new Monk("Bo Rai'Cho"));
+        ArrayList<TemplatePerson> TeamRed = new ArrayList<>();
+        TeamRed.add(new Peasant("John"));
+        TeamRed.add(new Rogue("Greyhood"));
+        TeamRed.add(new Monk("Bo Rai'Cho"));
+        TeamRed.add(new Sniper("Glaz"));
 
-        List<TemplatePerson> Infantry = new ArrayList<>();
-        Infantry.add(new Sniper("Glaz"));
-        Infantry.add(new Spearman("Homer"));
-        Infantry.add(new Wizard("Gandalf"));
+        ArrayList<TemplatePerson> TeamBlu = new ArrayList<>();
+        TeamBlu.add(new Spearman("Homer"));
+        TeamBlu.add(new Wizard("Gandalf"));
+        TeamBlu.add(new Crossbowman("Oleg"));
+        TeamBlu.add(new Peasant("Kel'tuzad"));
 
-        for (TemplatePerson person : Villagers){
-            System.out.println("Команда деревенщин: " + person.getClass().getSimpleName() + " " + person.toString());
+        for (TemplatePerson person : TeamRed){
+            System.out.println("Команда красных бойцов: " + person.getClass().getSimpleName() + " " + person.toString());
         }
 
-        for (TemplatePerson person : Infantry){
-            System.out.println("Команда бойцов: " + person.getClass().getSimpleName() + " " + person.toString());
+        for (TemplatePerson person : TeamBlu){
+            System.out.println("Команда синих бойцов: " + person.getClass().getSimpleName() + " " + person.toString());
         }
 
     }

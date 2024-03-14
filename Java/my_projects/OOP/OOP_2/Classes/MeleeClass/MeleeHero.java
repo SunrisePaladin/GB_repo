@@ -1,4 +1,4 @@
-package OOP.OOP_2.Classes.Melee;
+package OOP.OOP_2.Classes.MeleeClass;
 
 import OOP.OOP_2.Classes.TemplatePerson;
 
