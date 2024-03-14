@@ -10,6 +10,8 @@ public abstract class TemplatePerson {
     protected int healthMax = 200;
     public boolean isActive = true;
 
+    public Coord pos;
+
     public int initiative = 0; //право хода
     protected int LoS = 1; //влияет на атаки (line of sight)
     protected int attack = 25; //атака
@@ -17,11 +19,12 @@ public abstract class TemplatePerson {
     protected int pierce = 3; //количество атак
     protected int defence = 10; //защита
 
-    public TemplatePerson(String name){
+    public TemplatePerson(String name, Coord pos){
         this.name = name;
+        this.pos = pos;
     }
 
-    public TemplatePerson(String name, int health, int attack, int reflectance, int pierce, int defence, int LoS, int initiative) {
+    public TemplatePerson(String name, int health, int attack, int reflectance, int pierce, int defence, int LoS, int initiative, Coord pos) {
         this.name  = name;
         this.health = health;
         this.attack = attack;

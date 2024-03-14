@@ -1,4 +1,4 @@
-package OOP.OOP_2.Classes;
+package OOP.OOP_3.Heroes;
 
 public class Peasant extends TemplatePerson {
 
@@ -7,9 +7,9 @@ public class Peasant extends TemplatePerson {
         return name;
     }
 
-    public Peasant(String name, Coord pos) {
+    public Peasant(String name) {
         super(name, 100, 25, 5, 2, 10,
-        1, 0, pos);
+        1, 0);
     }
 
     void attack(TemplatePerson target) {

@@ -1,9 +1,8 @@
-package OOP.OOP_2.Classes.MeleeClass;
+package OOP.OOP_3.Heroes.MeleeClass;
 
 import java.util.HashMap;
 
-import OOP.OOP_2.Classes.Coord;
-import OOP.OOP_2.Classes.TemplatePerson;
+import OOP.OOP_3.Heroes.TemplatePerson;
 
 public class Monk extends TemplatePerson implements MeleeHero{
 
@@ -15,9 +14,9 @@ public class Monk extends TemplatePerson implements MeleeHero{
     int mana = 100;
     int manaMax = 100;
 
-    public Monk(String name, Coord pos) {
+    public Monk(String name) {
         super(name, 150, 30, 10, 1, 20,
-        1, 1, pos);
+        1, 1);
     }
 
     public void melee_attack(TemplatePerson target) {

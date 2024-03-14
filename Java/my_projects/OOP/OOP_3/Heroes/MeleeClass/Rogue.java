@@ -1,9 +1,8 @@
-package OOP.OOP_2.Classes.MeleeClass;
+package OOP.OOP_3.Heroes.MeleeClass;
 
 import java.util.HashMap;
 
-import OOP.OOP_2.Classes.Coord;
-import OOP.OOP_2.Classes.TemplatePerson;
+import OOP.OOP_3.Heroes.TemplatePerson;
 
 public class Rogue extends TemplatePerson implements MeleeHero {
     @Override
@@ -11,9 +10,9 @@ public class Rogue extends TemplatePerson implements MeleeHero {
         return name;
     }
 
-    public Rogue(String name, Coord pos) {
+    public Rogue(String name) {
         super(name, 75, 30, 20, 1, 0,
-        3, 2, pos); // высокая атака, нет защиты
+        3, 2); // высокая атака, нет защиты
     }
 
     public void melee_attack(TemplatePerson target) {

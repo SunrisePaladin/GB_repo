@@ -7,7 +7,16 @@ public class Coord {
     public Coord(int _x, int _y) {
         x = _x;
         y = _y;
+    }
 
+    public Coord(){
+        x = 0;
+        y = 0;
+    }
+
+    public int find_distance(Coord c){
+        return (int)Math.ceil(Math.sqrt(Math.pow(c.getX()-x, 2) 
+        + Math.pow(c.getY()-y, 2))); //надо полностью покрыть клетку для атаки
     }
 
     public boolean can_move(int curX, int curY) {

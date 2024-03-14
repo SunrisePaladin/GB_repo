@@ -1,10 +1,8 @@
-package OOP.OOP_2.Classes.RangeClass;
+package OOP.OOP_3.Heroes.RangeClass;
 
 import java.util.HashMap;
 
-import OOP.OOP_2.Classes.Coord;
-import OOP.OOP_2.Classes.TemplatePerson;
-
+import OOP.OOP_3.Heroes.TemplatePerson;
 
 public class Wizard extends TemplatePerson implements RangeHero {
 
@@ -16,9 +14,9 @@ public class Wizard extends TemplatePerson implements RangeHero {
     int mana = 100;
     int manaMax = 100;
 
-    public Wizard(String name, Coord pos) {
+    public Wizard(String name) {
         super(name, 100, 35, 10, 2, 0,
-        7, 1, pos);
+        7, 1);
         mana = 100;
         manaMax = 100;
     }

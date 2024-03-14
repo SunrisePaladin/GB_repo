@@ -1,7 +1,6 @@
-package OOP.OOP_2.Classes.MeleeClass;
+package OOP.OOP_3.Heroes.MeleeClass;
 
-import OOP.OOP_2.Classes.Coord;
-import OOP.OOP_2.Classes.TemplatePerson;
+import OOP.OOP_3.Heroes.TemplatePerson;
 
 public class Spearman extends TemplatePerson implements MeleeHero {
 
@@ -12,9 +11,9 @@ public class Spearman extends TemplatePerson implements MeleeHero {
 
     int spears = 3;
 
-    public Spearman(String name, Coord pos) {
+    public Spearman(String name) {
         super(name, 150, 15, 30, 2, 20,
-        2, 2, pos);
+        2, 2);
     }
 
     public void melee_attack(TemplatePerson target) {

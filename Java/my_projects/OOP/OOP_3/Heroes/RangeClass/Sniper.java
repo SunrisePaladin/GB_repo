@@ -1,9 +1,8 @@
-package OOP.OOP_2.Classes.RangeClass;
+package OOP.OOP_3.Heroes.RangeClass;
 
 import java.util.HashMap;
 
-import OOP.OOP_2.Classes.Coord;
-import OOP.OOP_2.Classes.TemplatePerson;
+import OOP.OOP_3.Heroes.TemplatePerson;
 
 public class Sniper extends TemplatePerson implements RangeHero {
 
@@ -12,9 +11,9 @@ public class Sniper extends TemplatePerson implements RangeHero {
         return name;
     }
 
-    public Sniper(String name, Coord pos) {
+    public Sniper(String name) {
         super(name, 100, 40, 10, 2, 15,
-        9, 3, pos);
+        9, 3);
     }
 
     public void range_attack(TemplatePerson target) {
