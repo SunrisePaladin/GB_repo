@@ -1,4 +1,4 @@
-package OOP.OOP_2.Classes;
+package OOP.OOP_3.Heroes;
 
 import java.util.HashMap;
 import java.util.Random;

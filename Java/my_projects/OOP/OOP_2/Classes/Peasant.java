@@ -1,26 +1,24 @@
-package OOP.OOP_2.Classes.Villagers;
+package OOP.OOP_2.Classes;
 
-import OOP.OOP_2.Classes.TemplatePerson;
-
-public class Monk extends TemplatePerson{
+public class Peasant extends TemplatePerson{
 
     @Override
     public String toString() {
         return name;
     }
 
-    public Monk(String name) {
-        super(name, 130, 30, 30, 10, 1, 20);
+    public Peasant(String name){
+        super(name, 100, 0, 25, 5, 1, 10); 
     }
 
-    public void attack(TemplatePerson target ) {
-        int damage = this.attack * rand.nextInt(1, pierce); //монах не бьёт сильно
+    void attack(TemplatePerson target) {
+        int damage = this.attack * rand.nextInt(1, pierce);
         System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), this.toString());
         target.take_damage(damage);
     }
 
     public void take_damage(int damage) {
-        int res_damage = damage * ( rand.nextInt(100)<reflectance?0:1) - defence;
+        int res_damage = damage * (rand.nextInt(100)<reflectance?0:1) - 2 *defence; //имеет удвоенную защиту
         if (res_damage <= 0) {
             System.out.printf("%s %s не получает урона \n", this.getClass().getSimpleName(), this.toString(), res_damage);
             res_damage = 0;
@@ -40,15 +38,18 @@ public class Monk extends TemplatePerson{
         }
     }
 
-    //усиление
-    public void cast_spell(){
-        if (defence + 10 <= 100) defence += 10; 
-        if (protection + 20 <= protectionMax) protection += 20;
-        healthMax += 20;
+    //укрепления из всего, что можно найти
+    public void rise_defence(){
+        if (defence + 15 <= 50) defence +=15 ;
+        if (protection + 15 <= protectionMax) protection +=15 ;
     }
 
-    //лечение
-    public void heal(){
-        if (health + 40 <= healthMax) health += 40; else health = healthMax;
+    //скрыться в кустах
+    public void hide(){
+        if (reflectance < 20) reflectance +=5;
+        Boolean visible = rand.nextInt(2)>0?false:true;
+        if (!visible) {
+            rise_defence();
+        }
     }
 }

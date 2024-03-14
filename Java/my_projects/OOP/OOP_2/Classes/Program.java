@@ -3,13 +3,12 @@ package OOP.OOP_2.Classes;
 import java.util.ArrayList;
 import java.util.List;
 
+import OOP.OOP_2.Classes.Infantry.Crossbowman;
 import OOP.OOP_2.Classes.Infantry.Sniper;
-import OOP.OOP_2.Classes.Infantry.Spearman;
 import OOP.OOP_2.Classes.Infantry.Wizard;
-import OOP.OOP_2.Classes.Villagers.Crossbowman;
-import OOP.OOP_2.Classes.Villagers.Monk;
-import OOP.OOP_2.Classes.Villagers.Peasant;
-import OOP.OOP_2.Classes.Villagers.Rogue;
+import OOP.OOP_2.Classes.Melee.Monk;
+import OOP.OOP_2.Classes.Melee.Rogue;
+import OOP.OOP_2.Classes.Melee.Spearman;
 
 public class Program {
     public static void main(String[] args) {

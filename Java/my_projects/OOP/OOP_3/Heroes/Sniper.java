@@ -1,28 +1,27 @@
-package OOP.OOP_2.Classes.Infantry;
+package OOP.OOP_3.Heroes;
 
 import java.util.HashMap;
 
 import OOP.OOP_2.Classes.TemplatePerson;
 
-public class Sniper extends TemplatePerson implements Infantry{
-    
+public class Sniper extends TemplatePerson{
     @Override
     public String toString() {
         return name;
     }
 
     public Sniper(String name) {
-        super(name, 100, 20, 40, 10, 2, 15); 
+        super(name, 100, 20, 40, 10, 1, 15); 
     }
 
-    public void range_attack(TemplatePerson target) {
+    public void attack(TemplatePerson target) {
         int damage = this.attack * rand.nextInt(1, pierce);
         System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), this.toString());
         target.take_damage(damage);
     }
 
     public void take_damage(int damage) {
-        int res_damage = damage * (rand.nextInt(100)<reflectance?0:1) - defence;
+        int res_damage = damage * ( rand.nextInt(100)<reflectance?0:1) - defence;
         if (res_damage <= 0) {
             System.out.printf("%s %s не получает урона \n", this.getClass().getSimpleName(), this.toString(), res_damage);
             res_damage = 0;

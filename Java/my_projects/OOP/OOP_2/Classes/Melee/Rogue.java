@@ -1,10 +1,10 @@
-package OOP.OOP_2.Classes.Villagers;
+package OOP.OOP_2.Classes.Melee;
 
 import java.util.HashMap;
 
 import OOP.OOP_2.Classes.TemplatePerson;
 
-public class Rogue extends TemplatePerson{
+public class Rogue extends TemplatePerson implements MeleeHero{
     @Override
     public String toString() {
         return name;
@@ -14,15 +14,15 @@ public class Rogue extends TemplatePerson{
         super(name, 75, 15, 35, 20, 2, 0); //высокая атака, нет защиты
     }
 
-    public void attack(TemplatePerson target) {
-        int damage = this.attack * rand.nextInt(1, pierce); 
+    public void melee_attack(TemplatePerson target) {
+        int damage = attack * rand.nextInt(1, pierce); 
         System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), this.toString());
         int attacks = rand.nextInt(1, 3); //может быть несколько атак
         for (int i=0; i<attacks; i++) target.take_damage(damage);
     }
 
     public void take_damage(int damage) {
-        int res_damage = damage * ( rand.nextInt(100)<reflectance?0:1) - defence;
+        int res_damage = damage * (rand.nextInt(100)<reflectance?0:1);
         if (res_damage <= 0) {
             System.out.printf("%s %s не получает урона \n", this.getClass().getSimpleName(), this.toString(), res_damage);
             res_damage = 0;
@@ -43,9 +43,10 @@ public class Rogue extends TemplatePerson{
     }
 
     //усиление
-    public void cast_spell(){
-        if (reflectance < 30) reflectance += 10; else reflectance = 30;
-        if (health + 20 <= healthMax) health+=20; else health = healthMax;
+    public void rise_defence(){
+        if (reflectance < 40) reflectance += 10; else reflectance = 40;
+        speed += 10;
+        pierce += 1;
     }
 
     //кража статистик
@@ -68,6 +69,6 @@ public class Rogue extends TemplatePerson{
                 target.change_stats(tmp);
             }
         }
-        else System.out.println("Кража неуспешна!");
+        else System.out.printf("%s %s сообщает: кража неуспешна!", this.getClass().getSimpleName(), name);
     }
 }

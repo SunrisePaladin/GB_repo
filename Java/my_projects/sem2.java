@@ -1,6 +1,6 @@
 import java.io.FileWriter;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+// import java.text.DateFormat;
+// import java.text.SimpleDateFormat;
 import java.io.File;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;

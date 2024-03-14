@@ -1,19 +1,20 @@
-package OOP.OOP_2.Classes.Infantry;
+package OOP.OOP_3.Heroes;
 
 import OOP.OOP_2.Classes.TemplatePerson;
 
-public class Spearman extends TemplatePerson{
+public class Monk extends TemplatePerson{
+
     @Override
     public String toString() {
         return name;
     }
 
-    public Spearman(String name) {
-        super(name, 150, 40, 15, 30, 1, 20); 
+    public Monk(String name) {
+        super(name, 130, 30, 30, 10, 1, 20);
     }
 
-    public void attack(TemplatePerson target) {
-        int damage = this.attack * rand.nextInt(1, pierce);
+    public void attack(TemplatePerson target ) {
+        int damage = this.attack * rand.nextInt(1, pierce); //монах не бьёт сильно
         System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), this.toString());
         target.take_damage(damage);
     }
@@ -39,17 +40,15 @@ public class Spearman extends TemplatePerson{
         }
     }
 
-    //заклинание
+    //усиление
     public void cast_spell(){
-        if (pierce +1 < 3) pierce += 1; else pierce=3;
-        healthMax+=30;
-        protectionMax+=30;
-        attack += 10;
+        if (defence + 10 <= 100) defence += 10; 
+        if (protection + 20 <= protectionMax) protection += 20;
+        healthMax += 20;
     }
 
-    //защититься
-    public void rise_defence(){
-        if (defence + 15 <= 50) defence +=15 ;
-        if (reflectance + 10 <= 50) reflectance +=10 ;
+    //лечение
+    public void heal(){
+        if (health + 40 <= healthMax) health += 40; else health = healthMax;
     }
 }

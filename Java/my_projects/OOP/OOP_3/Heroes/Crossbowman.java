@@ -1,4 +1,4 @@
-package OOP.OOP_2.Classes.Villagers;
+package OOP.OOP_3.Heroes;
 
 import java.util.HashMap;
 
