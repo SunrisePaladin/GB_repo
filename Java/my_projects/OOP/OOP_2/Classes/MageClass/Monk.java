@@ -17,6 +17,7 @@ public class Monk extends MageHero{
         int damage = attack;
         System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), this.toString());
         target.take_damage(damage);
+        super.magic_attack(target);
     }
 
     //усиление
@@ -43,5 +44,6 @@ public class Monk extends MageHero{
             target.getClass().getSimpleName(), target.name);
         }
         else System.out.printf("У %s %s не хватает маны!", this.getClass().getSimpleName(), name);
+        super.cast_spell(target);
     }
 }

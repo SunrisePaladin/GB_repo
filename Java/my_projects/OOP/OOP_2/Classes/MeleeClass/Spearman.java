@@ -21,6 +21,7 @@ public class Spearman extends MeleeHero {
         else {
             System.out.printf("У %s %s закончились копья! (для ближнего боя тоже)");
         }
+        super.melee_attack(target);
     }
 
     // защититься
@@ -30,6 +31,7 @@ public class Spearman extends MeleeHero {
         healthMax += 20;
         defence += 15;
         // spears += 1; под вопросом
+        super.rise_defence();
     }
 
     //кинуть снаряд

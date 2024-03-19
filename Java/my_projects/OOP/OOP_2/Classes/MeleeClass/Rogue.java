@@ -26,6 +26,7 @@ public class Rogue extends MeleeHero {
             System.out.printf("Атака №{d}", i+1);
             target.take_damage(damage);
         }
+        super.melee_attack(target);
     }
 
     // усиление
@@ -37,6 +38,7 @@ public class Rogue extends MeleeHero {
             reflectance = 40;
         LoS += 1;
         pierce += 1;
+        super.rise_defence();
     }
 
     // кража статистик

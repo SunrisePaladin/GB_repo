@@ -18,6 +18,7 @@ public class Wizard extends MageHero {
         int damage = attack;
         System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), this.toString());
         target.take_damage(damage);
+        super.magic_attack(target);
     }
 
     // подготовка
@@ -26,6 +27,7 @@ public class Wizard extends MageHero {
         if (health + 40 <= healthMax) health += 40;
         else health = healthMax;
         if (mana + 50 <= manaMax) mana += 50;
+        super.refresh_mana();
     }
 
     // проклятье + чёрная магия
@@ -93,5 +95,6 @@ public class Wizard extends MageHero {
             System.out.println(s);
         }
         else System.out.println("Противник уклонился от заклинания!");
+        super.cast_spell(target);
     }
 }

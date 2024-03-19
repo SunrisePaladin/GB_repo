@@ -17,6 +17,7 @@ public class Sniper extends RangeHero {
         int damage = this.attack * rand.nextInt(1, pierce);
         System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), this.toString());
         target.take_damage(damage);
+        super.range_attack(target);
     }
 
     // подготовка
@@ -26,6 +27,7 @@ public class Sniper extends RangeHero {
         else reflectance = 40;
         if (health + 20 <= healthMax) health += 20;
         else health = healthMax;
+        super.prepare();
     }
 
     // пробивной выстрел
@@ -48,5 +50,6 @@ public class Sniper extends RangeHero {
             System.out.printf("Защита %s выдержала выстрел!", target.name);
             if (pierce + 1 <= 4) pierce += 1;
         }
+        super.longshot(target);
     }
 }

@@ -12,6 +12,7 @@ public class Crossbowman extends RangeHero {
         6, 3, pos);
     }
 
+    @Override
     public void range_attack(TemplatePerson target){
         if (ammo > 0) {
             int damage = attack * rand.nextInt(2, pierce); // всегда минимум 2 атаки
@@ -19,14 +20,17 @@ public class Crossbowman extends RangeHero {
             target.take_damage(damage);
         }
         else System.out.printf("%s %s говорит: Не хватает стрел!", this.getClass().getSimpleName(), this.toString());
+        super.range_attack(target);
     }
 
     // подготовка
+    @Override
     public void prepare() {
         if (reflectance < 30) reflectance += 10;
         else reflectance = 30;
         if (health + 20 <= healthMax) health += 20;
         else health = healthMax;
+        super.prepare();
     }
 
     // пробивной выстрел
@@ -44,5 +48,6 @@ public class Crossbowman extends RangeHero {
             }
         } 
         else System.out.println("Пометка неуспешна!");
+        super.longshot(target);
     }
 }
