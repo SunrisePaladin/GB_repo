@@ -5,44 +5,31 @@ import java.util.HashMap;
 import OOP.OOP_2.Classes.Coord;
 import OOP.OOP_2.Classes.TemplatePerson;
 
-public class Rogue extends TemplatePerson implements MeleeHero {
+public class Rogue extends MeleeHero {
+    
+    public Rogue(String name, Coord pos) {
+        super(name, 75, 30, 20, 2, 0,
+        2, 2, pos); // высокая атака, нет защиты
+    }
+
     @Override
     public String toString() {
         return name;
     }
 
-    public Rogue(String name, Coord pos) {
-        super(name, 75, 30, 20, 1, 0,
-        3, 2, pos); // высокая атака, нет защиты
-    }
-
+    @Override
     public void melee_attack(TemplatePerson target) {
         int damage = attack;
         System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), this.toString());
         int attacks = rand.nextInt(1, pierce+1); // может быть несколько атак
         for (int i = 0; i < attacks; i++){
+            System.out.printf("Атака №{d}", i+1);
             target.take_damage(damage);
         }
     }
 
-    public void take_damage(int damage) {
-        int res_damage = damage * (rand.nextInt(100) < reflectance ? 0 : 1);
-        if (res_damage <= 0) {
-            System.out.printf("%s %s не получает урона \n", this.getClass().getSimpleName(), this.toString(),
-                    res_damage);
-            res_damage = 0;
-        } 
-        else {
-            health -= res_damage;
-            System.out.printf("%s %s получает урон %d \n", this.getClass().getSimpleName(), this.toString(),
-                    res_damage);
-        }
-        if (health <= 0) {
-            die("От полученного урона");
-        }
-    }
-
     // усиление
+    @Override
     public void rise_defence() {
         if (reflectance < 40)
             reflectance += 10;

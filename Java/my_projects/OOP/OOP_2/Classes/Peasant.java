@@ -18,6 +18,7 @@ public class Peasant extends TemplatePerson {
         target.take_damage(damage);
     }
 
+    @Override
     public void take_damage(int damage) {
         int res_damage = damage * (rand.nextInt(100) < reflectance ? 0 : 1) - 2 * defence; // имеет удвоенную защиту
         if (res_damage <= 0) {

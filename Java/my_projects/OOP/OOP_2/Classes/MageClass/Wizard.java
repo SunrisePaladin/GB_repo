@@ -1,60 +1,36 @@
-package OOP.OOP_3.Heroes.RangeClass;
+package OOP.OOP_2.Classes.MageClass;
 
 import java.util.HashMap;
 
-import OOP.OOP_3.Heroes.TemplatePerson;
+import OOP.OOP_2.Classes.Coord;
+import OOP.OOP_2.Classes.TemplatePerson;
 
-public class Wizard extends TemplatePerson implements RangeHero {
+
+public class Wizard extends MageHero {
+
+    public Wizard(String name, Coord pos) {
+        super(name, 120, 35, 10, 2, 0,
+        7, 1, pos);
+    }
 
     @Override
-    public String toString() {
-        return name;
-    }
-
-    int mana = 100;
-    int manaMax = 100;
-
-    public Wizard(String name) {
-        super(name, 100, 35, 10, 2, 0,
-        7, 1);
-        mana = 100;
-        manaMax = 100;
-    }
-
-    public void range_attack(TemplatePerson target) {
-        int damage = attack * rand.nextInt(1, pierce);
+    public void magic_attack(TemplatePerson target) {
+        int damage = attack;
         System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), this.toString());
         target.take_damage(damage);
     }
 
-    public void take_damage(int damage) {
-        int res_damage = damage * (rand.nextInt(100) < reflectance ? 0 : 1) - defence;
-        if (res_damage <= 0) {
-            System.out.printf("%s %s не получает урона \n", this.getClass().getSimpleName(), this.toString(),
-                    res_damage);
-            res_damage = 0;
-        } 
-        else {
-            health -= res_damage;
-            System.out.printf("%s %s получает урон %d \n", this.getClass().getSimpleName(), this.toString(),
-                    res_damage);
-        }
-        if (health <= 0)
-        {
-            die("От полученного урона");
-        }
-    }
-
     // подготовка
-    public void prepare() {
+    @Override
+    public void refresh_mana() {
         if (health + 40 <= healthMax) health += 40;
         else health = healthMax;
         if (mana + 50 <= manaMax) mana += 50;
-        if (pierce < 4) pierce += 1;
     }
 
     // проклятье + чёрная магия
-    public void longshot(TemplatePerson target) {
+    @Override
+    public void cast_spell(TemplatePerson target) {
         Boolean chance = rand.nextInt(100) <= target.getStats().get("reflectance") ? true : false;
         if (chance) {
             mana -= 100;
@@ -68,7 +44,7 @@ public class Wizard extends TemplatePerson implements RangeHero {
             }
 
             String s = this.toString() + "проклинает персонажа " + target.toString() + " на ";
-            int curse = rand.nextInt(6);
+            int curse = rand.nextInt(4);
             HashMap<String, Integer> tmp = target.getStats();
             switch (curse) {
                 case 0:

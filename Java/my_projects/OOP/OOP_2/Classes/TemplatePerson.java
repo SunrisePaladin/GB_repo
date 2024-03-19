@@ -34,8 +34,6 @@ public abstract class TemplatePerson {
         this.LoS = LoS;
         this.initiative = initiative;
     }
-
-    public void take_damage(int damage){}
     
     public void die(String reason){
         System.out.printf("%s %s погиб по причине: %s", this.getClass().getSimpleName(), this.toString(), reason);
@@ -63,5 +61,22 @@ public abstract class TemplatePerson {
         stats.put("LoS", LoS);
         stats.put("initiative", initiative);
         return stats;
+    }
+
+    public void take_damage(int damage) {
+        int res_damage = damage * (rand.nextInt(100) < reflectance ? 0 : 1) - defence;
+        if (res_damage <= 0) {
+            System.out.printf("%s %s не получает урона \n", this.getClass().getSimpleName(), this.toString(),
+                    res_damage);
+            res_damage = 0;
+        } 
+        else {
+            health -= res_damage;
+            System.out.printf("%s %s получает урон %d \n", this.getClass().getSimpleName(), this.toString(),
+                    res_damage);
+        }
+        if (health <= 0) {
+            die("От полученного урона");
+        }
     }
 }

@@ -3,12 +3,12 @@ package OOP.OOP_2.Classes;
 import java.util.ArrayList;
 import java.util.Random;
 
-import OOP.OOP_2.Classes.MeleeClass.Monk;
+import OOP.OOP_2.Classes.MageClass.Monk;
+import OOP.OOP_2.Classes.MageClass.Wizard;
 import OOP.OOP_2.Classes.MeleeClass.Rogue;
 import OOP.OOP_2.Classes.MeleeClass.Spearman;
 import OOP.OOP_2.Classes.RangeClass.Crossbowman;
 import OOP.OOP_2.Classes.RangeClass.Sniper;
-import OOP.OOP_2.Classes.RangeClass.Wizard;
 
 public class Program {
 

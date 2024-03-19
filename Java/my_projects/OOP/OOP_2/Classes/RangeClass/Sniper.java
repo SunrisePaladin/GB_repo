@@ -5,42 +5,22 @@ import java.util.HashMap;
 import OOP.OOP_2.Classes.Coord;
 import OOP.OOP_2.Classes.TemplatePerson;
 
-public class Sniper extends TemplatePerson implements RangeHero {
-
-    @Override
-    public String toString() {
-        return name;
-    }
+public class Sniper extends RangeHero {
 
     public Sniper(String name, Coord pos) {
         super(name, 100, 40, 10, 2, 15,
         9, 3, pos);
     }
 
+    @Override
     public void range_attack(TemplatePerson target) {
         int damage = this.attack * rand.nextInt(1, pierce);
         System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), this.toString());
         target.take_damage(damage);
     }
 
-    public void take_damage(int damage) {
-        int res_damage = damage * (rand.nextInt(100) < reflectance ? 0 : 1) - defence;
-        if (res_damage <= 0) {
-            System.out.printf("%s %s не получает урона \n", this.getClass().getSimpleName(), this.toString(),
-                    res_damage);
-            res_damage = 0;
-        } 
-        else {
-            health -= res_damage;
-            System.out.printf("%s %s получает урон %d \n", this.getClass().getSimpleName(), this.toString(),
-                    res_damage);
-        }
-        if (health <= 0) {
-            die("От полученного урона");
-        }
-    }
-
-    // укрыться
+    // подготовка
+    @Override
     public void prepare() {
         if (reflectance < 40) reflectance += 10; 
         else reflectance = 40;
@@ -48,7 +28,8 @@ public class Sniper extends TemplatePerson implements RangeHero {
         else health = healthMax;
     }
 
-    // пометка персонажа
+    // пробивной выстрел
+    @Override
     public void longshot(TemplatePerson target) {
         int damage = (int)Math.round((double)attack*0.75);
         HashMap<String, Integer> tmp = target.getStats();
