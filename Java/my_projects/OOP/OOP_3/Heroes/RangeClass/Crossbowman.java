@@ -1,22 +1,22 @@
-package OOP.OOP_2.Classes.RangeClass;
+package OOP.OOP_3.Heroes.RangeClass;
 
 import java.util.HashMap;
 
-import OOP.OOP_2.Classes.Coord;
-import OOP.OOP_2.Classes.TemplatePerson;
+import OOP.OOP_3.src.Coord;
+import OOP.OOP_3.Heroes.TemplatePerson;
 
 public class Crossbowman extends RangeHero {
 
     public Crossbowman(String name, Coord pos) {
-        super(name, 120, 20, 20, 4, 15,
+        super(name, 120, 20, 20, 3, 15,
         6, 3, pos);
     }
 
     @Override
     public void range_attack(TemplatePerson target){
         if (ammo > 0) {
-            int damage = attack * rand.nextInt(1, pierce);
-            System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), this.toString());
+            int damage = attack * rand.nextInt(2, pierce); // всегда минимум 2 атаки
+            System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), this.toString(), damage);
             target.take_damage(damage);
         }
         else System.out.printf("%s %s говорит: Не хватает стрел!", this.getClass().getSimpleName(), this.toString());
