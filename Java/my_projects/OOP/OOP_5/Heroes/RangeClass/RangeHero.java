@@ -1,9 +1,9 @@
-package OOP.OOP_4.Heroes.RangeClass;
+package OOP.OOP_5.Heroes.RangeClass;
 
 import java.util.ArrayList;
 
-import OOP.OOP_4.src.Coord;
-import OOP.OOP_4.Heroes.TemplatePerson;
+import OOP.OOP_5.src.Coord;
+import OOP.OOP_5.Heroes.TemplatePerson;
 
 public abstract class RangeHero extends TemplatePerson{
     protected int ammo;
@@ -22,19 +22,24 @@ public abstract class RangeHero extends TemplatePerson{
         TemplatePerson target = enemies.get(0);
         int nearest = pos.find_distance(target.pos);
         for (TemplatePerson enemy : enemies){
+            if (enemy.isActive == false) continue;
             if (pos.find_distance(enemy.pos) < nearest){
                 nearest = pos.find_distance(enemy.pos);
                 target = enemy;
             }
         }
-        if (nearest <= LoS){
+        if (nearest <= LoS && target.isActive){
             System.out.println("Цель найдена!");
             return target;
         }
-        else{
+        else if (nearest > LoS){
             System.out.println("Цели вне зоны стрельбы");
             return null;
         } 
+        else {
+            System.out.println("Все цели в радиусе неактивны");
+            return null;
+        }
     }
 
     @Override

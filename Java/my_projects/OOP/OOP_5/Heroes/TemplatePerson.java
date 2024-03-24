@@ -1,31 +1,30 @@
-package OOP.OOP_4.Heroes;
+package OOP.OOP_5.Heroes;
 
 import java.util.HashMap;
 import java.util.Random;
 
-import OOP.OOP_4.src.Coord;
-import OOP.OOP_4.src.ActionInterface;
+import OOP.OOP_5.src.Coord;
+import OOP.OOP_5.src.ActionInterface;
 
 public abstract class TemplatePerson implements ActionInterface{
     public String name;
     public Random rand = new Random();
-    protected int health = 100;
-    protected int healthMax = 200;
+    public Coord pos;
     public boolean isActive = true; //менять, когда персонаж уже мёртв
 
-    public Coord pos;
+    protected int health = 100;
+    protected int healthMax = 200;
+    public int initiative; //право хода
+    protected int LoS; //влияет на атаки (line of sight)
+    protected int attack; //атака
+    protected int reflectance; //шанс отражения
+    protected int pierce; //количество атак
+    protected int defence; //защита
 
-    public int initiative = 0; //право хода
-    protected int LoS = 1; //влияет на атаки (line of sight)
-    protected int attack = 25; //атака
-    protected int reflectance = 10; //шанс отражения
-    protected int pierce = 3; //количество атак
-    protected int defence = 10; //защита
-
-    public TemplatePerson(String name, Coord pos){
-        this.name = name;
-        this.pos = pos;
-    }
+    // public TemplatePerson(String name, Coord pos){
+    //     this.name = name;
+    //     this.pos = pos;
+    // }
 
     public TemplatePerson(String name, int health, int attack, int reflectance, int pierce, int defence, int LoS, int initiative, Coord pos) {
         this.name  = name;
@@ -81,8 +80,18 @@ public abstract class TemplatePerson implements ActionInterface{
                     res_damage);
         }
         if (health <= 0) {
-            die("От полученного урона\n");
+            die("От полученного урона");
         }
+    }
+
+    public String getInfo(){
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.getClass().getSimpleName().charAt(0));
+        sb.append(name).append(" H:").append(health).append(" D:").append(defence).append(" R:").append(reflectance)
+        .append(" P:").append(pierce).append(" I:").append(initiative).append(" A:").append(attack);
+        if (isActive) sb.append(" Awoken");
+        else sb.append(" Fallen");
+        return sb.toString();
     }
     
 }

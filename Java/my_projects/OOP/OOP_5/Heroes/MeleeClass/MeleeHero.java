@@ -1,10 +1,10 @@
-package OOP.OOP_4.Heroes.MeleeClass;
+package OOP.OOP_5.Heroes.MeleeClass;
 
-import OOP.OOP_4.src.Coord;
+import OOP.OOP_5.src.Coord;
 
 import java.util.ArrayList;
 
-import OOP.OOP_4.Heroes.TemplatePerson;
+import OOP.OOP_5.Heroes.TemplatePerson;
 //типичный класс бойцов ближнего боя
 
 public abstract class MeleeHero extends TemplatePerson{
@@ -22,6 +22,7 @@ public abstract class MeleeHero extends TemplatePerson{
         TemplatePerson target = enemies.get(0);
         int nearest = pos.find_distance(target.pos);
         for (TemplatePerson enemy : enemies){
+            if (enemy.isActive == false) continue;
             if (pos.find_distance(enemy.pos) < nearest){
                 nearest = pos.find_distance(enemy.pos);
                 target = enemy;
@@ -40,7 +41,7 @@ public abstract class MeleeHero extends TemplatePerson{
                 pos.move_to(pos.getX(), target.pos.getY()>pos.getY()?pos.getY()+1:pos.getY()-1);
             }
             return null;
-        } 
+        }
     }
 
     @Override

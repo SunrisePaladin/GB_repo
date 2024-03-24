@@ -1,7 +1,7 @@
-package OOP.OOP_4.Heroes.MeleeClass;
+package OOP.OOP_5.Heroes.MeleeClass;
 
-import OOP.OOP_4.src.Coord;
-import OOP.OOP_4.Heroes.TemplatePerson;
+import OOP.OOP_5.src.Coord;
+import OOP.OOP_5.Heroes.TemplatePerson;
 
 public class Spearman extends MeleeHero {
     public int spears = 3;

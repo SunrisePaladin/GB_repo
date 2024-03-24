@@ -1,6 +1,6 @@
-package OOP.OOP_4.src;
+package OOP.OOP_5.src;
 
-import OOP.OOP_4.Heroes.TemplatePerson;
+import OOP.OOP_5.Heroes.TemplatePerson;
 
 import java.util.ArrayList;
 

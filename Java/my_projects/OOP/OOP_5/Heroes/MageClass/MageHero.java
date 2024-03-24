@@ -1,10 +1,10 @@
-package OOP.OOP_4.Heroes.MageClass;
+package OOP.OOP_5.Heroes.MageClass;
 
-import OOP.OOP_4.src.Coord;
+import OOP.OOP_5.src.Coord;
 
 import java.util.ArrayList;
 
-import OOP.OOP_4.Heroes.TemplatePerson;
+import OOP.OOP_5.Heroes.TemplatePerson;
 //данный класс имеет параметр мана,
 //а атаки не зависят от параметра pierce
 

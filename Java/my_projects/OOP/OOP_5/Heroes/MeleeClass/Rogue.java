@@ -1,9 +1,9 @@
-package OOP.OOP_4.Heroes.MeleeClass;
+package OOP.OOP_5.Heroes.MeleeClass;
 
 import java.util.HashMap;
 
-import OOP.OOP_4.src.Coord;
-import OOP.OOP_4.Heroes.TemplatePerson;
+import OOP.OOP_5.src.Coord;
+import OOP.OOP_5.Heroes.TemplatePerson;
 
 public class Rogue extends MeleeHero {
     
@@ -20,10 +20,10 @@ public class Rogue extends MeleeHero {
     @Override
     public void melee_attack(TemplatePerson target) {
         int damage = attack;
-        System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), this.toString(), damage);
-        int attacks = rand.nextInt(1, pierce+1); // может быть несколько атак
+        System.out.printf("%s %s готов атаковать на %d", this.getClass().getSimpleName(), this.toString(), damage);
+        int attacks = rand.nextInt(1, pierce+2); // может быть несколько атак
         for (int i = 0; i < attacks; i++){
-            System.out.printf("Атака № %d: ", i+1);
+            System.out.printf("\nАтака № %d:", i+1);
             target.take_damage(damage);
         }
         //super.melee_attack(target);

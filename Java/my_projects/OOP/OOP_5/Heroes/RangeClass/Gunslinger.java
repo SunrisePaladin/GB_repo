@@ -1,13 +1,13 @@
-package OOP.OOP_4.Heroes.RangeClass;
+package OOP.OOP_5.Heroes.RangeClass;
 
 import java.util.HashMap;
 
-import OOP.OOP_4.src.Coord;
-import OOP.OOP_4.Heroes.TemplatePerson;
+import OOP.OOP_5.src.Coord;
+import OOP.OOP_5.Heroes.TemplatePerson;
 
-public class Sniper extends RangeHero {
+public class Gunslinger extends RangeHero {
 
-    public Sniper(String name, Coord pos) {
+    public Gunslinger(String name, Coord pos) {
         super(name, 100, 40, 10, 3, 10,
         9, 3, pos);
     }

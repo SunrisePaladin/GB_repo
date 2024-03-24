@@ -1,4 +1,4 @@
-package OOP.OOP_4.src;
+package OOP.OOP_5.src;
 
 public class Coord {
     private int curX=0;

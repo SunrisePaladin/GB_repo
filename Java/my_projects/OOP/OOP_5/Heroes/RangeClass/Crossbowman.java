@@ -1,9 +1,9 @@
-package OOP.OOP_4.Heroes.RangeClass;
+package OOP.OOP_5.Heroes.RangeClass;
 
 import java.util.HashMap;
 
-import OOP.OOP_4.src.Coord;
-import OOP.OOP_4.Heroes.TemplatePerson;
+import OOP.OOP_5.src.Coord;
+import OOP.OOP_5.Heroes.TemplatePerson;
 
 public class Crossbowman extends RangeHero {
 
