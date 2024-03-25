@@ -16,10 +16,10 @@ public class Crossbowman extends RangeHero {
     public void range_attack(TemplatePerson target){
         if (ammo > 0) {
             int damage = attack * rand.nextInt(2, pierce); // всегда минимум 2 атаки
-            System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), this.toString(), damage);
+            System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), name, damage);
             target.take_damage(damage);
         }
-        else System.out.printf("%s %s говорит: Не хватает стрел!", this.getClass().getSimpleName(), this.toString());
+        else System.out.printf("%s %s говорит: Не хватает стрел!", this.getClass().getSimpleName(), name);
         //super.range_attack(target);
     }
 

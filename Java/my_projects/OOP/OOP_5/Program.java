@@ -33,30 +33,31 @@ public class Program {
         TeamAll.sort((o1, o2) -> Integer.compare(o2.initiative, o1.initiative));
 
         for (TemplatePerson person : TeamRed) {
-            System.out.println("Команда красных бойцов: " + person.getClass().getSimpleName() + " " + person.toString());
+            System.out.println("Команда красных бойцов: " + person.getClass().getSimpleName() + " " + person.name);
         }
 
         for (TemplatePerson person : TeamBlu) {
-            System.out.println("Команда синих бойцов: " + person.getClass().getSimpleName() + " " + person.toString());
+            System.out.println("Команда синих бойцов: " + person.getClass().getSimpleName() + " " + person.name);
         }
 
+        View.view();
         Scanner ifstream = new Scanner(System.in);
 
         while (true){
-            View.view();
-
             for (TemplatePerson p : TeamAll) {
-                System.out.print(p + " ходит. ");
+                System.out.print(p.name + " ходит. ");
                 
                 if (TeamRed.contains(p)) {
-                    p.step(TeamBlu);
+                    p.step(TeamBlu, TeamRed);
                 } 
                 else {
-                    p.step(TeamRed);
+                    p.step(TeamRed, TeamBlu);
                 }
 
                 System.out.println();
             }
+
+            View.view();
 
             String com = ifstream.nextLine();
 
@@ -78,11 +79,11 @@ public class Program {
 
     public static void createTeam(ArrayList<TemplatePerson> team, int num, boolean start) {
 
-        String[] blue_teamnames = { "Mario", "Link", "Master Chief", "Kratos", "Nathan Drake",
-                "Geralt_of_Rivia", "Lara Croft", "Samus Aran", "Solid Snake", "Aloy" };
         String[] red_teamnames = { "John", "Greyhood", "Bo Rai'Cho", "Glaz", "Homer", "Gandalf", "Oleg",
                 "Kel'tuzad", "Shikimori", "Kalbasan" };
-
+        String[] blue_teamnames = { "Mario", "Link", "Master Chief", "Kratos", "Nathan Drake",
+                "Geralt_of_Rivia", "Lara Croft", "Samus Aran", "Solid Snake", "Aloy" };
+        
         int unit = 0;
 
         Random rand = new Random();
@@ -129,6 +130,5 @@ public class Program {
         }
         return false;
     }
-
 
 }

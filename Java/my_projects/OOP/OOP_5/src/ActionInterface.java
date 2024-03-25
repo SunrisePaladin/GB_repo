@@ -9,6 +9,6 @@ import java.util.ArrayList;
 public interface ActionInterface {
     
     //Один шаг действия персонажа
-    void step(ArrayList<TemplatePerson> enemies);
+    void step(ArrayList<TemplatePerson> enemies, ArrayList<TemplatePerson> teammates);
     
 }

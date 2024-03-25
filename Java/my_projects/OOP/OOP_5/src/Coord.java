@@ -14,6 +14,16 @@ public class Coord {
         curY = 0;
     }
 
+    @Override 
+    public boolean equals(Object obj) {
+        // if (!(obj instanceof Coord)) {
+        //     return false;
+        // }
+        Coord other = (Coord)obj;
+        return curX==other.getX() && curY==other.getY();
+    }
+
+
     public int find_distance(Coord c){
         return (int)
         Math.ceil(
@@ -22,14 +32,14 @@ public class Coord {
         ); //надо полностью покрыть клетку для атаки
     }
 
-    //зачем? проверить персонажа?
+    
     public boolean can_move(int curX, int curY) {
         return curX>=0  && curX<width && curY>=0 && curY<height;
     }
 
     //приоритет движения по иксу
     public boolean move_direction_x(Coord c){
-        return (Math.abs(c.getX() - curX) < Math.abs(c.getY() - curY));
+        return (Math.abs(c.getX() - curX) > Math.abs(c.getY() - curY));
     }
 
     public void move_to(int dX, int dY){

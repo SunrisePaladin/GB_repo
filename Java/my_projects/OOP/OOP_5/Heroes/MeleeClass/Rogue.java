@@ -13,17 +13,17 @@ public class Rogue extends MeleeHero {
     }
 
     @Override
-    public String toString() {
-        return name;
-    }
-
-    @Override
     public void melee_attack(TemplatePerson target) {
         int damage = attack;
-        System.out.printf("%s %s готов атаковать на %d", this.getClass().getSimpleName(), this.toString(), damage);
+        System.out.printf("%s %s готов атаковать на %d", this.getClass().getSimpleName(), name, damage);
         int attacks = rand.nextInt(1, pierce+2); // может быть несколько атак
         for (int i = 0; i < attacks; i++){
-            System.out.printf("\nАтака № %d:", i+1);
+            
+            if (i != 0) System.out.printf("\nАтака № %d: ", i+1);
+            else {
+                System.out.println();
+                System.out.printf("Атака № %d: ", i+1);
+            }
             target.take_damage(damage);
         }
         //super.melee_attack(target);

@@ -26,6 +26,17 @@ public abstract class TemplatePerson implements ActionInterface{
     //     this.pos = pos;
     // }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(name).append(" H:").append(health).append(" D:").append(defence).append(" R:").append(reflectance)
+        .append(" P:").append(pierce).append(" I:").append(initiative).append(" A:").append(attack).append(" Pos: ")
+        .append(pos.getX()).append(" ").append(pos.getY());
+        if (isActive) sb.append(" Awoken");
+        else sb.append(" Fallen");
+        return sb.toString();
+    }
+
     public TemplatePerson(String name, int health, int attack, int reflectance, int pierce, int defence, int LoS, int initiative, Coord pos) {
         this.name  = name;
         this.health = health;
@@ -39,7 +50,7 @@ public abstract class TemplatePerson implements ActionInterface{
     }
     
     public void die(String reason){
-        System.out.printf("%s %s погиб по причине: %s", this.getClass().getSimpleName(), this.toString(), reason);
+        System.out.printf("%s %s погиб по причине: %s", this.getClass().getSimpleName(), name, reason);
         isActive = false;
     }
 
@@ -70,14 +81,12 @@ public abstract class TemplatePerson implements ActionInterface{
     public void take_damage(int damage) {
         int res_damage = damage * (rand.nextInt(100) < reflectance ? 0 : 1) - defence;
         if (res_damage <= 0) {
-            System.out.printf("%s %s не получает урона\n", this.getClass().getSimpleName(), this.toString(),
-                    res_damage);
+            System.out.printf("%s %s не получает урона\n", this.getClass().getSimpleName(), name, res_damage);
             res_damage = 0;
         } 
         else {
             health -= res_damage;
-            System.out.printf("%s %s получает урон %d\n", this.getClass().getSimpleName(), this.toString(),
-                    res_damage);
+            System.out.printf("%s %s получает урон %d\n", this.getClass().getSimpleName(), name, res_damage);
         }
         if (health <= 0) {
             die("От полученного урона");
@@ -87,10 +96,6 @@ public abstract class TemplatePerson implements ActionInterface{
     public String getInfo(){
         StringBuilder sb = new StringBuilder();
         sb.append(this.getClass().getSimpleName().charAt(0));
-        sb.append(name).append(" H:").append(health).append(" D:").append(defence).append(" R:").append(reflectance)
-        .append(" P:").append(pierce).append(" I:").append(initiative).append(" A:").append(attack);
-        if (isActive) sb.append(" Awoken");
-        else sb.append(" Fallen");
         return sb.toString();
     }
     

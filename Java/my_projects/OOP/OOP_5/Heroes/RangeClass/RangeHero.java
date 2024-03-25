@@ -18,7 +18,7 @@ public abstract class RangeHero extends TemplatePerson{
     void prepare(){};
     void longshot(TemplatePerson target){};
     
-    public TemplatePerson find_enemy(ArrayList<TemplatePerson> enemies){
+    public TemplatePerson find_enemy(ArrayList<TemplatePerson> enemies, ArrayList<TemplatePerson> teammates){
         TemplatePerson target = enemies.get(0);
         int nearest = pos.find_distance(target.pos);
         for (TemplatePerson enemy : enemies){
@@ -43,18 +43,13 @@ public abstract class RangeHero extends TemplatePerson{
     }
 
     @Override
-    public String toString() {
-        return name;
-    }
-
-    @Override
-    public void step(ArrayList<TemplatePerson> enemies) {
+    public void step(ArrayList<TemplatePerson> enemies, ArrayList<TemplatePerson> teammates) {
         if (health <= 0)
         {
-            this.die("Уже умер");
+            die("Уже умер");
             return;
         }
-        TemplatePerson target = this.find_enemy(enemies);
+        TemplatePerson target = this.find_enemy(enemies, teammates);
         if (target != null)
         {
             range_attack(target);

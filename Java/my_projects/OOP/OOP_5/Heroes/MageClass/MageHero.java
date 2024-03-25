@@ -24,12 +24,7 @@ public abstract class MageHero extends TemplatePerson{
     public void refresh_mana(){};
 
     @Override
-    public String toString() {
-        return name;
-    }
-
-    @Override
-    public void step(ArrayList<TemplatePerson> enemies) {
+    public void step(ArrayList<TemplatePerson> enemies, ArrayList<TemplatePerson> teammates) {
 
     }
 }

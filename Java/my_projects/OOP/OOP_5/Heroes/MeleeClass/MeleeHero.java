@@ -18,7 +18,7 @@ public abstract class MeleeHero extends TemplatePerson{
     public void melee_attack(TemplatePerson target){};
 
     //помним про LoS = 1
-    public TemplatePerson find_enemy(ArrayList<TemplatePerson> enemies){
+    public TemplatePerson find_enemy(ArrayList<TemplatePerson> enemies, ArrayList<TemplatePerson> teammates){
         TemplatePerson target = enemies.get(0);
         int nearest = pos.find_distance(target.pos);
         for (TemplatePerson enemy : enemies){
@@ -33,30 +33,43 @@ public abstract class MeleeHero extends TemplatePerson{
             return target;
         }
         else{
-            System.out.print("Цели вне зоны действия кулаков, выдвигаюсь");
+            System.out.print("Цели вне зоны действия кулаков, выдвигаюсь.");
+            boolean is_clear = true;
+            System.out.printf("\nЦель - клетка %d %d\n", target.pos.getX(), target.pos.getY());
             if (this.pos.move_direction_x(target.pos)) {
-                pos.move_to(target.pos.getX()>pos.getX()?pos.getX()+1:pos.getX()-1, pos.getY());
+                int new_x = target.pos.getX()>pos.getX()?pos.getX()+1:pos.getX()-1;
+                for (TemplatePerson friend : teammates){
+                    if (friend.pos.equals(new Coord(new_x, pos.getY()))) {
+                        is_clear = false;
+                        System.out.println(friend.toString());
+                    }
+                }
+                if (is_clear) pos.move_to(new_x, pos.getY());
+                else System.out.print(" Там уже занято");
             }
             else {
-                pos.move_to(pos.getX(), target.pos.getY()>pos.getY()?pos.getY()+1:pos.getY()-1);
+                int new_y =  target.pos.getY()>pos.getY()?pos.getY()+1:pos.getY()-1;
+                for (TemplatePerson friend : teammates){
+                    if (friend.pos.equals(new Coord(pos.getX(), new_y))) {
+                        is_clear = false;
+                        System.out.println(friend.toString());
+                    }
+                }
+                if (is_clear) pos.move_to(pos.getX(), new_y);
+                else System.out.print("Там уже занято");
             }
             return null;
         }
     }
 
     @Override
-    public String toString() {
-        return name;
-    }
-
-    @Override
-    public void step(ArrayList<TemplatePerson> enemies) {
+    public void step(ArrayList<TemplatePerson> enemies, ArrayList<TemplatePerson> teammates) {
         if (health <= 0)
         {
             this.die("Уже умер");
             return;
         }
-        TemplatePerson target = this.find_enemy(enemies);
+        TemplatePerson target = this.find_enemy(enemies, teammates);
         if (target != null)
         {
             melee_attack(target);

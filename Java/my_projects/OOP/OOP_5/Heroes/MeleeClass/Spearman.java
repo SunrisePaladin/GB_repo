@@ -15,7 +15,7 @@ public class Spearman extends MeleeHero {
     public void melee_attack(TemplatePerson target) {
         if (spears > 0){
             int damage = attack * rand.nextInt(1, pierce);
-            System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), this.toString(), damage);
+            System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), name, damage);
             target.take_damage(damage);
         }
         else {

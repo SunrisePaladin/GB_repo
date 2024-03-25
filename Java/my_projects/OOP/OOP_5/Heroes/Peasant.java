@@ -6,11 +6,6 @@ import OOP.OOP_5.src.Coord;
 
 public class Peasant extends TemplatePerson {
 
-    @Override
-    public String toString() {
-        return name;
-    }
-
     public Peasant(String name, Coord pos) {
         super(name, 130, 25, 5, 2, 10,
         1, 0, pos);
@@ -18,7 +13,7 @@ public class Peasant extends TemplatePerson {
 
     void attack(TemplatePerson target) {
         int damage = attack * rand.nextInt(1, pierce);
-        System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), this.toString());
+        System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), name);
         target.take_damage(damage);
     }
 
@@ -26,14 +21,12 @@ public class Peasant extends TemplatePerson {
     public void take_damage(int damage) {
         int res_damage = damage * (rand.nextInt(100) < reflectance ? 0 : 1) - 2 * defence; // имеет удвоенную защиту
         if (res_damage <= 0) {
-            System.out.printf("%s %s не получает урона", this.getClass().getSimpleName(), this.toString(),
-                    res_damage);
+            System.out.printf("%s %s не получает урона", this.getClass().getSimpleName(), name, res_damage);
             res_damage = 0;
         } 
         else {
             health -= res_damage;
-            System.out.printf("%s %s получает урон %d", this.getClass().getSimpleName(), this.toString(),
-                    res_damage);
+            System.out.printf("%s %s получает урон %d", this.getClass().getSimpleName(), name, res_damage);
         }
         if (health <= 0)
         {
@@ -59,7 +52,7 @@ public class Peasant extends TemplatePerson {
     }
 
     @Override
-    public void step(ArrayList<TemplatePerson> enemies) {
+    public void step(ArrayList<TemplatePerson> enemies, ArrayList<TemplatePerson> teammates) {
 
     }
 }
