@@ -8,7 +8,7 @@ import OOP.OOP_5.Heroes.TemplatePerson;
 public class Rogue extends MeleeHero {
     
     public Rogue(String name, Coord pos) {
-        super(name, 75, 30, 20, 2, 0,
+        super(name, 100, 30, 20, 2, 0,
         1, 2, pos); // высокая атака, нет защиты
     }
 

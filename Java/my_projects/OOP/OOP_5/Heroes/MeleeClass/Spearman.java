@@ -7,8 +7,8 @@ public class Spearman extends MeleeHero {
     public int spears = 3;
 
     public Spearman(String name, Coord pos) {
-        super(name, 150, 15, 10, 2, 20,
-        1, 2, pos);
+        super(name, 150, 20, 10, 2, 20,
+        2, 2, pos);
     }
 
     @Override
@@ -19,7 +19,7 @@ public class Spearman extends MeleeHero {
             target.take_damage(damage);
         }
         else {
-            System.out.printf("У %s %s закончились копья! (для ближнего боя тоже)");
+            System.out.printf("У %s %s закончились копья! (для ближнего боя тоже)", this.getClass().getSimpleName(), name);
         }
         //super.melee_attack(target);
     }
@@ -29,7 +29,7 @@ public class Spearman extends MeleeHero {
     public void rise_defence() {
         if (pierce < 5) pierce += 1;
         healthMax += 20;
-        defence += 15;
+        if (defence<100) defence += 15; else defence = 50;
         // spears += 1; под вопросом
         //super.rise_defence();
     }
@@ -37,14 +37,14 @@ public class Spearman extends MeleeHero {
     //кинуть снаряд
     public void throw_spear(TemplatePerson target) {
         int damage = attack;
-        if (spears > 0){
-            int num_throws = rand.nextInt(1, spears+1);
+        if (spears > 1){
+            int num_throws = rand.nextInt(1, spears);
+            System.out.println();
             for (int i = 0; i < num_throws; i++){
-                System.out.printf("Атака копьём d\n", i+1);
+                System.out.printf("Атака копьём %d\n", i+1);
                 target.take_damage(damage);
                 spears -= 1;
             }
-            if (spears < 0) spears = 0;
         }
     }
 }

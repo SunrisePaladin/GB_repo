@@ -14,9 +14,17 @@ public abstract class RangeHero extends TemplatePerson{
         ammo = 5;
     }
 
+    public void setAmmo(int x){
+        ammo = x;
+    };
+
+    public int getAmmo(){
+        return ammo;
+    }
+    
     void range_attack(TemplatePerson target){};
-    void prepare(){};
-    void longshot(TemplatePerson target){};
+    public void prepare(){};
+    public void longshot(TemplatePerson target){};
     
     public TemplatePerson find_enemy(ArrayList<TemplatePerson> enemies, ArrayList<TemplatePerson> teammates){
         TemplatePerson target = enemies.get(0);
@@ -55,4 +63,5 @@ public abstract class RangeHero extends TemplatePerson{
             range_attack(target);
         }
     }
+    
 }

@@ -10,14 +10,14 @@ public class Wizard extends MageHero {
 
     public Wizard(String name, Coord pos) {
         super(name, 120, 35, 10, 2, 0,
-        7, 1, pos);
+        1, 1, pos);
     }
 
     @Override
     public void magic_attack(TemplatePerson target) {
         int damage = attack;
         System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), name, damage);
-        target.take_damage(damage);
+        //target.take_damage(damage);
         //super.magic_attack(target);
     }
 
@@ -26,7 +26,7 @@ public class Wizard extends MageHero {
     public void refresh_mana() {
         if (health + 40 <= healthMax) health += 40;
         else health = healthMax;
-        if (mana + 50 <= manaMax) mana += 50;
+        if (mana + 10 <= manaMax) mana += 10;
         //super.refresh_mana();
     }
 
@@ -36,7 +36,7 @@ public class Wizard extends MageHero {
         int chance = rand.nextInt(1, 101);
         boolean can_cast = chance > target.getStats().get("reflectance") ? true : false;
         if (can_cast) {
-            mana -= 100;
+            mana -= 50;
 
             if (health - 30 > 0) {
                 health -= 30;

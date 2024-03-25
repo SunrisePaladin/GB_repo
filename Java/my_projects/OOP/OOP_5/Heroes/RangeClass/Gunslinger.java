@@ -8,8 +8,8 @@ import OOP.OOP_5.Heroes.TemplatePerson;
 public class Gunslinger extends RangeHero {
 
     public Gunslinger(String name, Coord pos) {
-        super(name, 100, 40, 10, 3, 10,
-        9, 3, pos);
+        super(name, 100, 20, 10, 3, 10,
+        8, 3, pos);
     }
 
     @Override

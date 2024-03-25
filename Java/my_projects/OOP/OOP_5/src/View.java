@@ -30,9 +30,9 @@ public class View {
     private static String getChar(int x, int y){
         String out = "| ";
         for (TemplatePerson human: Program.TeamAll) {
-            if (human.pos.getX() == y && human.pos.getY() == x){
+            if (human.pos.getX() == x && human.pos.getY() == y){
                 if (human.isActive == false) {
-                    out = "|" + (AnsiColor.ANSI_RED + human.getInfo().charAt(0) + AnsiColor.ANSI_RESET);
+                    out = "|" + (AnsiColor.ANSI_BLACK_BACKGROUND + human.getInfo().charAt(0) + AnsiColor.ANSI_RESET);
                     break;
                 }
                 if (Program.TeamRed.contains(human)) out = "|" + (AnsiColor.ANSI_RED + human.getInfo().charAt(0) + AnsiColor.ANSI_RESET);

@@ -29,8 +29,9 @@ public abstract class TemplatePerson implements ActionInterface{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(name).append(" H:").append(health).append(" D:").append(defence).append(" R:").append(reflectance)
-        .append(" P:").append(pierce).append(" I:").append(initiative).append(" A:").append(attack).append(" Pos: ")
+        sb.append(this.getClass().getSimpleName()).append(" ")
+        .append(name).append(" H:").append(health).append(" D:").append(defence)
+        .append(" I:").append(initiative).append(" A:").append(attack).append(" Pos: ")
         .append(pos.getX()).append(" ").append(pos.getY());
         if (isActive) sb.append(" Awoken");
         else sb.append(" Fallen");
