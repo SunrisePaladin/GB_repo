@@ -4,7 +4,7 @@ import OOP.OOP_6.src.Coord;
 import OOP.OOP_6.Heroes.TemplatePerson;
 
 public class Spearman extends MeleeHero {
-    public int spears = 3;
+    private int spears = 3;
 
     public Spearman(String name, Coord pos) {
         super(name, 150, 20, 10, 2, 20,
@@ -28,9 +28,17 @@ public class Spearman extends MeleeHero {
     @Override
     public void rise_defence() {
         if (pierce < 5) pierce += 1;
-        healthMax += 20;
+        if (healthMax + 10 <= 200) healthMax += 10; else healthMax = 200;
         if (defence<30) defence += 5; else defence = 30;
         //super.rise_defence();
+    }
+
+    public void setSpears(int x){
+        spears = x;
+    };
+
+    public int getSpears(){
+        return spears;
     }
 
     //кинуть снаряд

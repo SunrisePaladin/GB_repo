@@ -9,7 +9,7 @@ public class Crossbowman extends RangeHero {
 
     public Crossbowman(String name, Coord pos) {
         super(name, 120, 20, 20, 3, 10,
-        7, 3, pos);
+        6, 3, pos);
     }
 
     @Override
@@ -30,12 +30,13 @@ public class Crossbowman extends RangeHero {
         else reflectance = 30;
         if (health + 20 <= healthMax) health += 20;
         else health = healthMax;
+        if (pierce +1 <= 5) pierce += 1; else pierce = 5;
         //super.prepare();
     }
 
     // пробивной выстрел
     public void longshot(TemplatePerson target) {
-        Boolean chance = rand.nextInt(100) <= target.getStats().get("defence") ? true : false;
+        Boolean chance = rand.nextInt(100) >= target.getStats().get("defence") ? true : false;
         if (chance) {
             HashMap<String, Integer> tmp = target.getStats();
             if (tmp.get("reflectance") - 15 > 0) {

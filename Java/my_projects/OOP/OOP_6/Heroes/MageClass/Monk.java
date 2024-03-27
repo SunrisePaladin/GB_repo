@@ -15,8 +15,8 @@ public class Monk extends MageHero {
     @Override
     public void magic_attack(TemplatePerson target) {
         int damage = attack;
-        System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), name, damage);
-        // target.take_damage(damage);
+        System.out.printf("%s %s готов атаковать на %d\n", this.getClass().getSimpleName(), name, damage);
+        target.take_damage(damage);
         // super.magic_attack(target);
     }
 
@@ -38,26 +38,6 @@ public class Monk extends MageHero {
             reflectance = 30;
         // super.refresh_mana();
     }
-
-    // лечение союзника
-    // @Override
-    // public void cast_spell(TemplatePerson target){
-    // if (mana >= 50) {
-    // mana -=50;
-    // HashMap<String, Integer> tmp = target.getStats();
-    // if (tmp.get("health")+50 <= tmp.get("healthMax")) tmp.replace("health",
-    // health+50);
-    // else tmp.replace("health", tmp.get("healthMax"));
-    // target.change_stats(tmp);
-    // if (health + 50 <= healthMax) health += 50; else health = healthMax;
-    // System.out.printf("%s %s вылечил %s %s", this.getClass().getSimpleName(),
-    // name,
-    // target.getClass().getSimpleName(), target.name);
-    // }
-    // else System.out.printf("У %s %s не хватает маны!",
-    // this.getClass().getSimpleName(), name);
-    // //super.cast_spell(target);
-    // }
 
     // новый метод усиления на друга
     @Override

@@ -24,37 +24,43 @@ public abstract class MeleeHero extends TemplatePerson {
         ArrayList<TemplatePerson> heroes = new ArrayList<>();
         heroes.addAll(enemies);
         heroes.addAll(teammates);
-        
-        double min_dist = Double.MAX_VALUE;
-        
-        //перебираю точки и смотрю подходящие
-        for (int i = 0; i < 10; i++){
-            for (int j = 0; j < 10; j++){
+        ArrayList<Coord> heroes_pos = new ArrayList<>();
+        for (TemplatePerson tmp : heroes) {
+            if (tmp.isActive)
+                heroes_pos.add(tmp.pos);
+            if (enemies.contains(tmp)) System.out.printf("\n%d %d | %f | %s ", tmp.pos.getX(), tmp.pos.getY(), pos.find_distance(tmp.pos), tmp.name);
+        }
+
+        // перебираю точки и смотрю подходящие
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
                 Coord point = new Coord(i, j);
-                double dist = pos.find_distance(point);
-                for (TemplatePerson hero : heroes){
-                    //проверяю 4 условия: клетка свободна, дистанция между персонажами уменьшится и ход в пределах ±1 клетки
-                    if ( (!hero.pos.equals(point) || !hero.isActive) && dist <= pos.find_distance(target.pos) && LoS>=dist) {
-                        possible_move.add(point);  
-                        //System.out.printf("\n%d %d, ", point.getX(), point.getY());
-                    }
+                double dist_to_point = pos.find_distance(point);
+                boolean is_clear = true;
+                // проверяю 3 условия: клетка свободна, дистанция между персонажами уменьшится и
+                // ход в пределах ±1 клетки
+                for (Coord c : heroes_pos)
+                if (point.equals(c) || dist_to_point > pos.find_distance(target.pos) 
+                    || (double)LoS < dist_to_point) {
+                    is_clear = false;
                 }
+                if (is_clear) possible_move.add(point);
             }
         }
 
-        //итоговая точка
+        // итоговая точка
         Coord res = null;
-        for (Coord p: possible_move){
-            
-            if (pos.find_distance(p) <= min_dist){ 
+
+        for (Coord p : possible_move) {
+            System.out.printf("\n%d %d | %f | %s ", p.getX(), p.getY(), pos.find_distance(p), target.name);
+            if (p.find_distance(target.pos) < pos.find_distance(target.pos) && pos.find_distance(p) <= LoS) {
                 res = p;
-                min_dist = pos.find_distance(p);
             }
         }
-        if (res != null){
+
+        if (res != null) {
             pos.move_to(res);
-        }
-        else {
+        } else {
             System.out.print("Не могу ходить туда. ");
         }
     }
@@ -73,53 +79,53 @@ public abstract class MeleeHero extends TemplatePerson {
         if (target == null) {
             return null;
         }
-        if (nearest <= LoS) {
+        if (nearest <= (double) LoS) {
             System.out.println("Цель найдена!");
             return target;
-        } 
-        else {
+        } else {
             System.out.print("Цели вне зоны действия кулаков, выдвигаюсь.");
 
-            for (int i=0; i < 2; i++) move(target, enemies, teammates);
+            // for (int i=0; i < 2; i++)
+            move(target, enemies, teammates);
 
-            //boolean is_clear = true;
+            // boolean is_clear = true;
             // for (int i = 0; i < 2; i++) {
-            //     if (this.pos.move_direction_x(target.pos)) {
-            //         int new_x = target.pos.getX() > pos.getX() ? pos.getX() + 1 : pos.getX() - 1;
-            //         for (TemplatePerson friend : teammates) {
-            //             if (friend.pos.equals(new Coord(new_x, pos.getY())) && friend.isActive) {
-            //                 is_clear = false;
-            //             }
-            //         }
-            //         for (TemplatePerson enemy : enemies) {
-            //             if (enemy.pos.equals(new Coord(new_x, pos.getY())) && enemy.isActive) {
-            //                 is_clear = false;
-            //             }
-            //         }
-            //         if (is_clear)
-            //             pos.move_to(new_x, pos.getY());
-            //         else {
-            //             System.out.print(" Там уже занято ");
-            //         }
-            //     } 
-            //     else {
-            //         int new_y = target.pos.getY() > pos.getY() ? pos.getY() + 1 : pos.getY() - 1;
-            //         for (TemplatePerson friend : teammates) {
-            //             if (friend.pos.equals(new Coord(pos.getX(), new_y))) {
-            //                 is_clear = false;
-            //             }
-            //         }
-            //         for (TemplatePerson enemy : enemies) {
-            //             if (enemy.pos.equals(new Coord(pos.getX(), new_y))) {
-            //                 is_clear = false;
-            //             }
-            //         }
-            //         if (is_clear)
-            //             pos.move_to(pos.getX(), new_y);
-            //         else{
-            //             System.out.print("Там уже занято ");
-            //         }
-            //     }
+            // if (this.pos.move_direction_x(target.pos)) {
+            // int new_x = target.pos.getX() > pos.getX() ? pos.getX() + 1 : pos.getX() - 1;
+            // for (TemplatePerson friend : teammates) {
+            // if (friend.pos.equals(new Coord(new_x, pos.getY())) && friend.isActive) {
+            // is_clear = false;
+            // }
+            // }
+            // for (TemplatePerson enemy : enemies) {
+            // if (enemy.pos.equals(new Coord(new_x, pos.getY())) && enemy.isActive) {
+            // is_clear = false;
+            // }
+            // }
+            // if (is_clear)
+            // pos.move_to(new_x, pos.getY());
+            // else {
+            // System.out.print(" Там уже занято ");
+            // }
+            // }
+            // else {
+            // int new_y = target.pos.getY() > pos.getY() ? pos.getY() + 1 : pos.getY() - 1;
+            // for (TemplatePerson friend : teammates) {
+            // if (friend.pos.equals(new Coord(pos.getX(), new_y))) {
+            // is_clear = false;
+            // }
+            // }
+            // for (TemplatePerson enemy : enemies) {
+            // if (enemy.pos.equals(new Coord(pos.getX(), new_y))) {
+            // is_clear = false;
+            // }
+            // }
+            // if (is_clear)
+            // pos.move_to(pos.getX(), new_y);
+            // else{
+            // System.out.print("Там уже занято ");
+            // }
+            // }
             // }
             return null;
         }

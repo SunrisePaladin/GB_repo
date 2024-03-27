@@ -2,6 +2,7 @@ package OOP.OOP_6.Heroes;
 
 import java.util.ArrayList;
 
+import OOP.OOP_6.Heroes.MeleeClass.Spearman;
 import OOP.OOP_6.Heroes.RangeClass.RangeHero;
 import OOP.OOP_6.src.Coord;
 
@@ -37,7 +38,7 @@ public class Peasant extends TemplatePerson {
 
     // укрепление
     public void rise_defence() {
-        if (defence + 10 <= 50)
+        if (defence + 10 <= 30)
             defence += 10;
         if (health + 20 <= healthMax)
             health += 20;
@@ -71,16 +72,39 @@ public class Peasant extends TemplatePerson {
             }
         }
 
-        RangeHero target = null;
+        ArrayList<Spearman> spearmen = new ArrayList<Spearman>();
+        for (TemplatePerson p: teammates) {
+            if (p instanceof Spearman){
+                if (p.isActive) spearmen.add((Spearman)p);
+            }
+        }
+
+        RangeHero target_range = null;
+        Spearman target_spear = null;
+
         for (RangeHero rh: shooters) {
             if (rh.getAmmo() < min)
             min = rh.getAmmo();
-            target = rh;
+            target_range = rh;
+        }
+        
+        min = Integer.MAX_VALUE;
+        
+        for (Spearman sm: spearmen) {
+            if (sm.getSpears() < min)
+            min = sm.getSpears();
+            target_spear = sm;
         }
 
-        if(target != null){
-            int new_ammo = target.getAmmo()+1;
-            target.setAmmo(new_ammo);
+        if(target_range != null) {
+            int new_ammo = target_range.getAmmo()+2;
+            target_range.setAmmo(new_ammo);
+        }
+        else System.out.println("Не осталось стрелков!");
+
+        if(target_spear != null){
+            int new_spears = target_spear.getSpears()+1;
+            target_spear.setSpears(new_spears);
         }
         else System.out.println("Не осталось стрелков!");
     }

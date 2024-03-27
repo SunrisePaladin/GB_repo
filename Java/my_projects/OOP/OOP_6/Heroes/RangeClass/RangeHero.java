@@ -11,7 +11,7 @@ public abstract class RangeHero extends TemplatePerson{
     public RangeHero(String name, int health, int attack, int reflectance, int pierce, int defence, int LoS, int initiative, Coord pos)
     {
         super(name, health, attack, reflectance, pierce, defence, LoS, initiative, pos);
-        ammo = 5;
+        ammo = 3;
     }
 
     public void setAmmo(int x){

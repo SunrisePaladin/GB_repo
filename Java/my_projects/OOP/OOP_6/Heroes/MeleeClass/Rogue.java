@@ -64,8 +64,8 @@ public class Rogue extends MeleeHero {
                 tmp.replace("health", 0);
                 target.change_stats(tmp);
             }
-            healthMax += 30;
-            health += 30;
+            if (healthMax +10 <= 200) healthMax += 10; else healthMax = 200;
+            if (health + 10 < healthMax) health += 10; else health = healthMax;
         } 
         else System.out.printf("\n%s %s сообщает: кража неуспешна!", this.getClass().getSimpleName(), name);
     }

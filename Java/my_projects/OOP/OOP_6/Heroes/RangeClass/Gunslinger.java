@@ -15,7 +15,7 @@ public class Gunslinger extends RangeHero {
     @Override
     public void range_attack(TemplatePerson target) {
         if (ammo > 0) {
-            int damage = attack * rand.nextInt(2, pierce); // всегда минимум 2 атаки
+            int damage = attack * rand.nextInt(2, pierce); // всегда минимум 2x атака
             System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), name, damage);
             target.take_damage(damage);
         }
@@ -30,18 +30,20 @@ public class Gunslinger extends RangeHero {
         else reflectance = 40;
         if (health + 20 <= healthMax) health += 20;
         else health = healthMax;
+        attack += 10;
         //super.prepare();
     }
 
     // пробивной выстрел
     @Override
     public void longshot(TemplatePerson target) {
-        int damage = (int)Math.round((double)attack*0.75);
+        int damage = attack;
         HashMap<String, Integer> tmp = target.getStats();
         if (tmp.get("defence") <= damage) {
             if (tmp.get("defence") - 20 > 0) {
                 tmp.replace("defence", tmp.get("defence") - 20);
                 target.change_stats(tmp);
+                System.out.printf("\n%s %s потерял защиту!", target.getClass().getSimpleName(), target.name);
             } 
             else {
                 tmp.replace("defence", 0);
@@ -51,7 +53,7 @@ public class Gunslinger extends RangeHero {
         }
         else {
             System.out.printf("Защита %s выдержала выстрел!", target.name);
-            if (pierce + 1 <= 4) pierce += 1;
+            if (pierce + 1 <= 5) pierce += 1;
         }
         //super.longshot(target);
     }

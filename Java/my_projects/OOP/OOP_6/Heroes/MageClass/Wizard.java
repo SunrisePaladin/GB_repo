@@ -17,15 +17,14 @@ public class Wizard extends MageHero {
     public void magic_attack(TemplatePerson target) {
         int damage = attack;
         System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), name, damage);
-        //target.take_damage(damage);
+        target.take_damage(damage);
         //super.magic_attack(target);
     }
 
     // подготовка
     @Override
     public void refresh_mana() {
-        if (health + 40 <= healthMax) health += 40;
-        else health = healthMax;
+        if (health + 20 <= healthMax) health += 20; else health = healthMax;
         if (mana + 10 <= manaMax) mana += 10;
         //super.refresh_mana();
     }

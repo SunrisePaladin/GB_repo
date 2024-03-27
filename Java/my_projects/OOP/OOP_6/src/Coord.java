@@ -27,7 +27,8 @@ public class Coord {
 
 
     public double find_distance(Coord c){
-        return Math.sqrt(Math.pow (Math.abs(c.getX()-curX), 2) + Math.pow(Math.abs(c.getY()-curX), 2)); 
+        //модуль можно опустить
+        return Math.sqrt(Math.pow(Math.abs(c.getX()-curX), 2) + Math.pow(Math.abs(c.getY()-curY), 2)); 
     }
 
     
