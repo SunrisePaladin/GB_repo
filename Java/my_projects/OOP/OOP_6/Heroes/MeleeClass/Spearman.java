@@ -1,14 +1,14 @@
-package OOP.OOP_5.Heroes.MeleeClass;
+package OOP.OOP_6.Heroes.MeleeClass;
 
-import OOP.OOP_5.src.Coord;
-import OOP.OOP_5.Heroes.TemplatePerson;
+import OOP.OOP_6.src.Coord;
+import OOP.OOP_6.Heroes.TemplatePerson;
 
 public class Spearman extends MeleeHero {
     public int spears = 3;
 
     public Spearman(String name, Coord pos) {
         super(name, 150, 20, 10, 2, 20,
-        2, 2, pos);
+        1, 2, pos);
     }
 
     @Override

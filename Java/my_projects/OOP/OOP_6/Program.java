@@ -1,4 +1,4 @@
-package OOP.OOP_5;
+package OOP.OOP_6;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,20 +6,20 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.Collections;
 
-import OOP.OOP_5.src.Coord;
-import OOP.OOP_5.Heroes.MageClass.MageHero;
-import OOP.OOP_5.Heroes.MeleeClass.MeleeHero;
-import OOP.OOP_5.Heroes.RangeClass.RangeHero;
-import OOP.OOP_5.Heroes.MageClass.Monk;
-import OOP.OOP_5.Heroes.MageClass.Wizard;
-import OOP.OOP_5.Heroes.MeleeClass.Rogue;
-import OOP.OOP_5.Heroes.MeleeClass.Spearman;
-import OOP.OOP_5.Heroes.RangeClass.Crossbowman;
-import OOP.OOP_5.Heroes.RangeClass.Gunslinger;
+import OOP.OOP_6.src.Coord;
+import OOP.OOP_6.Heroes.MageClass.MageHero;
+import OOP.OOP_6.Heroes.MeleeClass.MeleeHero;
+import OOP.OOP_6.Heroes.RangeClass.RangeHero;
+import OOP.OOP_6.Heroes.MageClass.Monk;
+import OOP.OOP_6.Heroes.MageClass.Wizard;
+import OOP.OOP_6.Heroes.MeleeClass.Rogue;
+import OOP.OOP_6.Heroes.MeleeClass.Spearman;
+import OOP.OOP_6.Heroes.RangeClass.Crossbowman;
+import OOP.OOP_6.Heroes.RangeClass.Gunslinger;
 
-import OOP.OOP_5.src.View;
-import OOP.OOP_5.Heroes.Peasant;
-import OOP.OOP_5.Heroes.TemplatePerson;
+import OOP.OOP_6.src.View;
+import OOP.OOP_6.Heroes.Peasant;
+import OOP.OOP_6.Heroes.TemplatePerson;
 
 public class Program {
     static Random rand = new Random();

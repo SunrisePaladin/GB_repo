@@ -57,9 +57,11 @@ public abstract class MeleeHero extends TemplatePerson {
                     }
                     if (is_clear)
                         pos.move_to(new_x, pos.getY());
-                    else
+                    else {
                         System.out.print(" Там уже занято");
-                } else {
+                    }
+                } 
+                else {
                     int new_y = target.pos.getY() > pos.getY() ? pos.getY() + 1 : pos.getY() - 1;
                     for (TemplatePerson friend : teammates) {
                         if (friend.pos.equals(new Coord(pos.getX(), new_y))) {
@@ -74,7 +76,7 @@ public abstract class MeleeHero extends TemplatePerson {
                     if (is_clear)
                         pos.move_to(pos.getX(), new_y);
                     else
-                        System.out.print("Там уже занято");
+                        System.out.print("Там уже занято ");
                 }
             }
             return null;

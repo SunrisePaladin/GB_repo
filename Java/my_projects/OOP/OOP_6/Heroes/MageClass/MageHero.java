@@ -1,11 +1,11 @@
-package OOP.OOP_5.Heroes.MageClass;
+package OOP.OOP_6.Heroes.MageClass;
 
-import OOP.OOP_5.src.Coord;
+import OOP.OOP_6.src.Coord;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import OOP.OOP_5.Heroes.TemplatePerson;
+import OOP.OOP_6.Heroes.TemplatePerson;
 //данный класс имеет параметр мана,
 //а атаки не зависят от параметра pierce
 
@@ -41,7 +41,7 @@ public abstract class MageHero extends TemplatePerson {
             return;
         }
         mana += 5;
-        System.out.print("Мана восстанавливается");
+        System.out.println("Мана восстанавливается");
         
         TemplatePerson target = null;
 

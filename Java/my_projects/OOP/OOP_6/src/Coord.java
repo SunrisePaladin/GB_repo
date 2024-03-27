@@ -1,4 +1,4 @@
-package OOP.OOP_5.src;
+package OOP.OOP_6.src;
 
 import java.util.ArrayList;
 
@@ -26,12 +26,8 @@ public class Coord {
     }
 
 
-    public int find_distance(Coord c){
-        return (int)
-        Math.ceil(
-            Math.sqrt(Math.pow(c.getX()-curX, 2) 
-            + Math.pow(c.getY()-curX, 2))
-        ); //надо полностью покрыть клетку для атаки
+    public double find_distance(Coord c){
+        return Math.sqrt(Math.pow (Math.abs(c.getX()-curX), 2) + Math.pow(Math.abs(c.getY()-curX), 2)); 
     }
 
     
@@ -56,7 +52,16 @@ public class Coord {
         return possiblePos;
     }
 
-    public void move_to(int dX, int dY){
+    // public void move_to(int dX, int dY){
+    //     if (can_move(dX, dY)){
+    //         curX = dX;
+    //         curY = dY;
+    //     }
+    // }
+
+    public void move_to(Coord c){
+        int dX = c.getX();
+        int dY = c.getY();
         if (can_move(dX, dY)){
             curX = dX;
             curY = dY;

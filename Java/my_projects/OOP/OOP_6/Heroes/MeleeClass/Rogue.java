@@ -1,9 +1,9 @@
-package OOP.OOP_5.Heroes.MeleeClass;
+package OOP.OOP_6.Heroes.MeleeClass;
 
 import java.util.HashMap;
 
-import OOP.OOP_5.src.Coord;
-import OOP.OOP_5.Heroes.TemplatePerson;
+import OOP.OOP_6.src.Coord;
+import OOP.OOP_6.Heroes.TemplatePerson;
 
 public class Rogue extends MeleeHero {
     
