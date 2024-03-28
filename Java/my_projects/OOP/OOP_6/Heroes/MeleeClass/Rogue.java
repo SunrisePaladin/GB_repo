@@ -14,11 +14,13 @@ public class Rogue extends MeleeHero {
 
     @Override
     public void melee_attack(TemplatePerson target) {
-        int damage = attack;
-        System.out.printf("%s %s готов атаковать на %d", this.getClass().getSimpleName(), name, damage);
+        int damage = attack * rand.nextInt(1, pierce);
+        logger += (this.getClass().getSimpleName() + " " + name + " готов атаковать на " + damage + "\n");
+        //System.out.printf("%s %s готов атаковать на %d", this.getClass().getSimpleName(), name, damage);
         int attacks = rand.nextInt(1, pierce+2); // может быть несколько атак
         for (int i = 0; i < attacks; i++){
-            System.out.printf("\nАтака № %d: ", i+1);
+            logger += ("Атака №" + i+1 + "\n");
+            //System.out.printf("\nАтака № %d: ", i+1);
             target.take_damage(damage);
         }
         //super.melee_attack(target);
@@ -38,7 +40,7 @@ public class Rogue extends MeleeHero {
 
     // кража статистик
     public void steal(TemplatePerson target) {
-        Boolean chance = rand.nextInt(100) > target.getStats().get("reflectance") ? true : false;
+        boolean chance = rand.nextInt(100) > target.getStats().get("reflectance") ? true : false;
         if (chance) {
             HashMap<String, Integer> tmp = target.getStats();
             if (tmp.get("health") - 30 > 0) {
@@ -62,6 +64,10 @@ public class Rogue extends MeleeHero {
             if (healthMax +10 <= 200) healthMax += 10; else healthMax = 200;
             if (health + 10 < healthMax) health += 10; else health = healthMax;
         } 
-        else System.out.printf("\n%s %s сообщает: кража неуспешна!", this.getClass().getSimpleName(), name);
+        
+        else {
+            //System.out.println("Кража неуспешна!");
+            logger += "Кража неуспешна!\n";
+        }
     }
 }

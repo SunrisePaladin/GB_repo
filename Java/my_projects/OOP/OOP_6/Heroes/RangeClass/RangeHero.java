@@ -37,15 +37,18 @@ public abstract class RangeHero extends TemplatePerson{
             }
         }
         if (nearest <= LoS && target.isActive){
-            System.out.println("Цель найдена!");
+            logger += "Цель найдена!\n";
+            //System.out.println("Цель найдена!");
             return target;
         }
         else if (nearest > LoS){
-            System.out.println("Цели вне зоны стрельбы");
+            logger += "Цели вне зоны стрельбы\n";
+            //System.out.println("Цели вне зоны стрельбы");
             return null;
         } 
         else {
-            System.out.println("Все цели в радиусе неактивны");
+            //System.out.println("Все цели в радиусе неактивны\n");
+            logger += "Все цели в радиусе неактивны";
             return null;
         }
     }

@@ -1,5 +1,6 @@
 package OOP.OOP_6.Heroes;
 
+// import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -20,11 +21,7 @@ public abstract class TemplatePerson implements ActionInterface{
     protected int reflectance; //шанс отражения
     protected int pierce; //количество атак
     protected int defence; //защита
-
-    // public TemplatePerson(String name, Coord pos){
-    //     this.name = name;
-    //     this.pos = pos;
-    // }
+    public String logger = "";
 
     @Override
     public String toString() {
@@ -51,7 +48,8 @@ public abstract class TemplatePerson implements ActionInterface{
     }
     
     public void die(String reason){
-        System.out.printf("%s %s погиб по причине: %s", this.getClass().getSimpleName(), name, reason);
+        logger += (this.getClass().getSimpleName() + " " + name + " погиб по причине: " + reason + "\n");
+        //System.out.printf("%s %s погиб по причине: %s", this.getClass().getSimpleName(), name, reason);
         isActive = false;
     }
 
@@ -82,22 +80,23 @@ public abstract class TemplatePerson implements ActionInterface{
     public void take_damage(int damage) {
         int res_damage = damage * (rand.nextInt(100) < reflectance ? 0 : 1) - defence;
         if (res_damage <= 0) {
-            System.out.printf("%s %s не получает урона\n", this.getClass().getSimpleName(), name, res_damage);
+            logger += (this.getClass().getSimpleName() + " " + name + " не получает урона\n");
+            //System.out.printf("%s %s не получает урона\n", this.getClass().getSimpleName(), name);
             res_damage = 0;
         } 
         else {
             health -= res_damage;
-            System.out.printf("%s %s получает урон %d\n", this.getClass().getSimpleName(), name, res_damage);
+            logger += (this.getClass().getSimpleName() + " " + name + " получает урон " + res_damage + "\n");
+            //System.out.printf("%s %s получает урон %d\n", this.getClass().getSimpleName(), name, res_damage);
         }
         if (health <= 0) {
             die("От полученного урона");
         }
     }
 
-    public String getInfo(){
-        StringBuilder sb = new StringBuilder();
-        sb.append(this.getClass().getSimpleName().charAt(0));
-        return sb.toString();
+    public void getInfo(){
+        System.out.println(logger);
+        logger = "";
     }
-    
+
 }

@@ -13,28 +13,29 @@ public class Peasant extends TemplatePerson {
                 1, 0, pos);
     }
 
-    void attack(TemplatePerson target) {
-        int damage = attack * rand.nextInt(1, pierce);
-        System.out.printf("%s %s готов атаковать на %d\n", this.getClass().getSimpleName(), name);
-        target.take_damage(damage);
-    }
+    // void attack(TemplatePerson target) {
+    //     int damage = attack * rand.nextInt(1, pierce);
+    //     System.out.printf("%s %s готов атаковать на %d\n", this.getClass().getSimpleName(), name);
+    //     target.take_damage(damage);
+    // }
 
     @Override
     public void take_damage(int damage) {
         int res_damage = damage * (rand.nextInt(100) < reflectance ? 0 : 1) - 2 * defence; // имеет удвоенную защиту
         if (res_damage <= 0) {
-            System.out.printf("%s %s не получает урона", this.getClass().getSimpleName(), name, res_damage);
+            logger += (this.getClass().getSimpleName() + " " + name + " не получает урона\n");
+            //System.out.printf("%s %s не получает урона\n", this.getClass().getSimpleName(), name, res_damage);
             res_damage = 0;
-        } else {
+        } 
+        else {
             health -= res_damage;
-            System.out.printf("%s %s получает урон %d\n", this.getClass().getSimpleName(), name, res_damage);
+            logger += (this.getClass().getSimpleName() + " " + name + " получает урон " + res_damage + "\n");
+            //System.out.printf("%s %s получает урон %d\n", this.getClass().getSimpleName(), name, res_damage);
         }
         if (health <= 0) {
             die("От полученного урона\n");
         }
     }
-
-    // TO DO поменять методы крестьянина в будущем
 
     // укрепление
     public void rise_defence() {
@@ -57,8 +58,6 @@ public class Peasant extends TemplatePerson {
 
     @Override
     public void step(ArrayList<TemplatePerson> enemies, ArrayList<TemplatePerson> teammates) {
-        
-        //добавить копья копейщикам!
         
         if (!isActive) {
             die("Уже умер\n");
@@ -102,12 +101,18 @@ public class Peasant extends TemplatePerson {
             int new_ammo = target_range.getAmmo()+2;
             target_range.setAmmo(new_ammo);
         }
-        else System.out.println("Не осталось стрелков!");
+        else {
+            //System.out.println("Не осталось стрелков!");
+            logger += ("Не осталось стрелков!\n");
+        }
 
         if(target_spear != null){
             int new_spears = target_spear.getSpears()+1;
             target_spear.setSpears(new_spears);
         }
-        else System.out.println("Не осталось копейщиков!");
+        else {
+            //System.out.println("Не осталось копейщиков!");
+            logger += ("Не осталось копейщиков!\n");
+        }
     }
 }

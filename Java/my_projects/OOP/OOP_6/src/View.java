@@ -32,11 +32,11 @@ public class View {
         for (TemplatePerson human: Program.TeamAll) {
             if (human.pos.getX() == x && human.pos.getY() == y){
                 if (human.isActive == false) {
-                    out = "|" + (AnsiColor.ANSI_BLACK_BACKGROUND + human.getInfo().charAt(0) + AnsiColor.ANSI_RESET);
+                    out = "|" + (AnsiColor.ANSI_BLACK_BACKGROUND + human.getClass().getSimpleName().charAt(0) + AnsiColor.ANSI_RESET);
                     break;
                 }
-                if (Program.TeamRed.contains(human)) out = "|" + (AnsiColor.ANSI_RED + human.getInfo().charAt(0) + AnsiColor.ANSI_RESET);
-                if (Program.TeamBlu.contains(human)) out = "|" + (AnsiColor.ANSI_BLUE + human.getInfo().charAt(0) + AnsiColor.ANSI_RESET);
+                if (Program.TeamRed.contains(human)) out = "|" + (AnsiColor.ANSI_RED + human.getClass().getSimpleName().charAt(0) + AnsiColor.ANSI_RESET);
+                if (Program.TeamBlu.contains(human)) out = "|" + (AnsiColor.ANSI_BLUE + human.getClass().getSimpleName().charAt(0) + AnsiColor.ANSI_RESET);
                 break;
             }
         }

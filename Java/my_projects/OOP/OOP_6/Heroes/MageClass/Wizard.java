@@ -15,7 +15,8 @@ public class Wizard extends MageHero {
     @Override
     public void magic_attack(TemplatePerson target) {
         int damage = attack;
-        System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), name, damage);
+        logger += (this.getClass().getSimpleName() + " " + name + " готов атаковать на " + damage + "\n");
+        //System.out.printf("%s %s готов атаковать на %d\n", this.getClass().getSimpleName(), name, damage);
         target.take_damage(damage);
         //super.magic_attack(target);
     }
@@ -24,6 +25,7 @@ public class Wizard extends MageHero {
     @Override
     public void refresh_mana() {
         if (health + 20 <= healthMax) health += 20; else health = healthMax;
+        attack += 10;
         if (mana + 10 <= manaMax) mana += 10;
         //super.refresh_mana();
     }
@@ -31,9 +33,8 @@ public class Wizard extends MageHero {
     // проклятье + чёрная магия
     @Override
     public void cast_spell(TemplatePerson target) {
-        int chance = rand.nextInt(1, 101);
-        boolean can_cast = chance > target.getStats().get("reflectance") ? true : false;
-        if (can_cast) {
+        boolean chance = rand.nextInt(100) > target.getStats().get("reflectance") ? true : false;
+        if (chance && target.isActive && mana>=50) {
             mana -= 50;
 
             if (health - 30 > 0) {
@@ -44,7 +45,7 @@ public class Wizard extends MageHero {
                 health = 0;
             }
 
-            String s = this.toString() + " проклинает персонажа " + target.toString() + " на ";
+            String s = name + " проклинает персонажа " + target.name + " на ";
             int curse = rand.nextInt(4);
             HashMap<String, Integer> tmp = target.getStats();
             switch (curse) {
@@ -94,9 +95,13 @@ public class Wizard extends MageHero {
                     }
                     break;
             }
-            System.out.print(s);
+            logger += s;
+            //System.out.print(s);
         }
-        else System.out.println("Противник уклонился от заклинания!");
+        else {
+            logger += "Противник уклонился от заклинания!\n";
+            //System.out.println("Противник уклонился от заклинания!");
+        }
         //super.cast_spell(target);
     }
 }

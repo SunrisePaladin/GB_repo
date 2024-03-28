@@ -53,7 +53,7 @@ public class Program {
         while (true) {
             turn++;
             for (TemplatePerson p : TeamAll) {
-                if (p.isActive) System.out.print(p.name + " ходит. ");
+                if (p.isActive) p.logger += (p.name + " ходит\n");
                 else continue;
                 if (TeamRed.contains(p)) {
                     p.step(TeamBlu, TeamRed);
@@ -73,6 +73,10 @@ public class Program {
                                 ((RangeHero) p).longshot(TeamBlu.get(rand.nextInt(0, 9)));
                             if (p instanceof Peasant)
                                 ((Peasant) p).hide();
+                            if (p instanceof Wizard)
+                                ((Wizard) p).cast_spell(TeamBlu.get(rand.nextInt(0, 9)));
+                            if (p instanceof Monk)
+                                ((Monk) p).cast_spell(TeamRed.get(rand.nextInt(0,9)));
                             break;
                         case 2:
                             if (p instanceof Spearman)
@@ -99,6 +103,10 @@ public class Program {
                                 ((RangeHero) p).longshot(TeamRed.get(rand.nextInt(0, 9)));
                             if (p instanceof Peasant)
                                 ((Peasant) p).hide();
+                            if (p instanceof Wizard)
+                                ((Wizard) p).cast_spell(TeamRed.get(rand.nextInt(0, 9)));
+                            if (p instanceof Monk)
+                                ((Monk) p).cast_spell(TeamBlu.get(rand.nextInt(0,9)));
                             break;
                         case 2:
                             if (p instanceof Spearman)
@@ -107,13 +115,12 @@ public class Program {
                                 ((Rogue) p).steal(TeamRed.get(rand.nextInt(0, 9)));
                     }
                 }
-
-                System.out.println();
             }
-
+            for (TemplatePerson person : TeamAll){
+                person.getInfo();
+            }
             View.view();
-
-            String com = ifstream.nextLine();
+            ifstream.nextLine();
 
             if (!isLiving(TeamRed)) {
                 System.out.println("Победа синих!");
@@ -125,8 +132,6 @@ public class Program {
                 break;
             }
 
-            if (com == "exit" || com == "e")
-                break;
         }
 
         ifstream.close();

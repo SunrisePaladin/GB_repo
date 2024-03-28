@@ -26,8 +26,7 @@ public abstract class MeleeHero extends TemplatePerson {
         heroes.addAll(teammates);
         ArrayList<Coord> heroes_pos = new ArrayList<>();
         for (TemplatePerson tmp : heroes) {
-            if (tmp.isActive)
-                heroes_pos.add(tmp.pos);
+            if (tmp.isActive) heroes_pos.add(tmp.pos);
             //if (enemies.contains(tmp)) System.out.printf("\n%d %d | %f | %s ", tmp.pos.getX(), tmp.pos.getY(), pos.find_distance(tmp.pos), tmp.name);
         }
 
@@ -40,8 +39,7 @@ public abstract class MeleeHero extends TemplatePerson {
                 // проверяю 3 условия: клетка свободна, дистанция между персонажами уменьшится и
                 // ход в пределах ±1 клетки
                 for (Coord c : heroes_pos)
-                if (point.equals(c) || dist_to_point > pos.find_distance(target.pos) 
-                    || (double)LoS < dist_to_point) {
+                if (point.equals(c) || dist_to_point > pos.find_distance(target.pos) || (double)LoS < dist_to_point) {
                     is_clear = false;
                 }
                 if (is_clear) possible_move.add(point);
@@ -62,7 +60,8 @@ public abstract class MeleeHero extends TemplatePerson {
             pos.move_to(res);
         } 
         else {
-            System.out.print("Не могу ходить туда. ");
+            logger += "Не могу ходить туда\n";
+            //System.out.print("Не могу ходить туда. ");
         }
     }
 
@@ -81,53 +80,14 @@ public abstract class MeleeHero extends TemplatePerson {
             return null;
         }
         if (nearest <= (double) LoS) {
-            System.out.println("Цель найдена!");
+            logger += "Цель найдена!\n";
+            //System.out.println("Цель найдена!");
             return target;
-        } else {
-            System.out.print("Цели вне зоны действия кулаков, выдвигаюсь.");
-
-            // for (int i=0; i < 2; i++)
+        } 
+        else {
+            logger += "Цели вне зоны действия кулаков, выдвигаюсь\n";
+            //System.out.print("Цели вне зоны действия кулаков, выдвигаюсь.");
             move(target, enemies, teammates);
-
-            // boolean is_clear = true;
-            // for (int i = 0; i < 2; i++) {
-            // if (this.pos.move_direction_x(target.pos)) {
-            // int new_x = target.pos.getX() > pos.getX() ? pos.getX() + 1 : pos.getX() - 1;
-            // for (TemplatePerson friend : teammates) {
-            // if (friend.pos.equals(new Coord(new_x, pos.getY())) && friend.isActive) {
-            // is_clear = false;
-            // }
-            // }
-            // for (TemplatePerson enemy : enemies) {
-            // if (enemy.pos.equals(new Coord(new_x, pos.getY())) && enemy.isActive) {
-            // is_clear = false;
-            // }
-            // }
-            // if (is_clear)
-            // pos.move_to(new_x, pos.getY());
-            // else {
-            // System.out.print(" Там уже занято ");
-            // }
-            // }
-            // else {
-            // int new_y = target.pos.getY() > pos.getY() ? pos.getY() + 1 : pos.getY() - 1;
-            // for (TemplatePerson friend : teammates) {
-            // if (friend.pos.equals(new Coord(pos.getX(), new_y))) {
-            // is_clear = false;
-            // }
-            // }
-            // for (TemplatePerson enemy : enemies) {
-            // if (enemy.pos.equals(new Coord(pos.getX(), new_y))) {
-            // is_clear = false;
-            // }
-            // }
-            // if (is_clear)
-            // pos.move_to(pos.getX(), new_y);
-            // else{
-            // System.out.print("Там уже занято ");
-            // }
-            // }
-            // }
             return null;
         }
     }
