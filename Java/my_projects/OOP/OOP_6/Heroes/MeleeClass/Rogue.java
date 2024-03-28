@@ -8,7 +8,7 @@ import OOP.OOP_6.Heroes.TemplatePerson;
 public class Rogue extends MeleeHero {
     
     public Rogue(String name, Coord pos) {
-        super(name, 100, 30, 20, 2, 0,
+        super(name, 100, 40, 20, 2, 0,
         1, 2, pos); // высокая атака, нет защиты
     }
 
@@ -18,12 +18,7 @@ public class Rogue extends MeleeHero {
         System.out.printf("%s %s готов атаковать на %d", this.getClass().getSimpleName(), name, damage);
         int attacks = rand.nextInt(1, pierce+2); // может быть несколько атак
         for (int i = 0; i < attacks; i++){
-            
-            if (i != 0) System.out.printf("\nАтака № %d: ", i+1);
-            else {
-                System.out.println();
-                System.out.printf("Атака № %d: ", i+1);
-            }
+            System.out.printf("\nАтака № %d: ", i+1);
             target.take_damage(damage);
         }
         //super.melee_attack(target);
@@ -36,8 +31,8 @@ public class Rogue extends MeleeHero {
             reflectance += 10;
         else
             reflectance = 40;
-        LoS += 1;
         pierce += 1;
+        attack += 10;
         //super.rise_defence();
     }
 
@@ -51,7 +46,7 @@ public class Rogue extends MeleeHero {
                 target.change_stats(tmp);
             } 
             else {
-                target.die("Ограблен до смерти");
+                target.die("Ограблен до смерти\n");
                 tmp.replace("health", 0);
                 target.change_stats(tmp);
             }
@@ -60,7 +55,7 @@ public class Rogue extends MeleeHero {
                 target.change_stats(tmp);
             } 
             else {
-                target.die("Ограблен до смерти");
+                target.die("Ограблен до смерти\n");
                 tmp.replace("health", 0);
                 target.change_stats(tmp);
             }

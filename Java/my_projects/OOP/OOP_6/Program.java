@@ -53,8 +53,8 @@ public class Program {
         while (true) {
             turn++;
             for (TemplatePerson p : TeamAll) {
-                if (p.isActive == true) System.out.print(p.name + " ходит. ");
-
+                if (p.isActive) System.out.print(p.name + " ходит. ");
+                else continue;
                 if (TeamRed.contains(p)) {
                     p.step(TeamBlu, TeamRed);
                     switch (turn % 3) {
@@ -147,37 +147,56 @@ public class Program {
         int unit = 0;
 
         Random rand = new Random();
-        for (int i = 0; i < num; i++) {
-            if (start)
-                unit = rand.nextInt(0, 4);
-            else
-                unit = rand.nextInt(4, 8);
+        int it = 0, y_pos = 0;
+        int[] condition = {0, 0, 0, 0};
+        while (it < num) {
+            // 2 крестьянина, 2 бойца, 2 стрелка, 2 мага + 2 случайных
+            unit = rand.nextInt(0, 7);
+            String name = start?red_names.get(it):blue_names.get(it); 
+            y_pos = start?9:0;
             switch (unit) {
                 case 0:
-                    team.add(new Gunslinger(red_names.get(i), new Coord(i, 9)));
+                    team.add(new Gunslinger(name, new Coord(it, y_pos)));
+                    condition[0]++;
                     break;
                 case 1:
-                    team.add(new Monk(red_names.get(i), new Coord(i, 9)));
+                    team.add(new Crossbowman(name, new Coord(it, y_pos)));
+                    condition[0]++;
                     break;
                 case 2:
-                    team.add(new Rogue(red_names.get(i), new Coord(i, 9)));
+                    team.add(new Monk(name, new Coord(it, y_pos)));
+                    condition[1]++;
                     break;
                 case 3:
-                    team.add(new Peasant(red_names.get(i), new Coord(i, 9)));
+                    team.add(new Wizard(name, new Coord(it, y_pos)));
+                    condition[1]++;
                     break;
                 case 4:
-                    team.add(new Wizard(blue_names.get(i), new Coord(i, 0)));
+                    team.add(new Rogue(name, new Coord(it, y_pos)));
+                    condition[2]++;
                     break;
                 case 5:
-                    team.add(new Crossbowman(blue_names.get(i), new Coord(i, 0)));
+                    team.add(new Spearman(name, new Coord(it, y_pos)));
+                    condition[2]++;
                     break;
                 case 6:
-                    team.add(new Spearman(blue_names.get(i), new Coord(i, 0)));
-                    break;
-                case 7:
-                    team.add(new Peasant(blue_names.get(i), new Coord(i, 0)));
+                    team.add(new Peasant(name, new Coord(it, y_pos)));
+                    condition[3]++;
                     break;
             }
+            boolean flag = true;
+            //System.out.print("old: ");
+            for (int k=0; k<4; k++) {
+                if (condition[k] > 3) {
+                    flag = false;
+                    team.remove(team.getLast());
+                    condition[k] = 3;
+                }
+            }
+            //System.out.println();
+            if (flag) it++;
+
+            //System.out.println("new: " + condition[0] + " " + condition[1] + " " + condition[2] + " " + condition[3]);
         }
     }
 

@@ -30,7 +30,7 @@ public class Peasant extends TemplatePerson {
             System.out.printf("%s %s получает урон %d\n", this.getClass().getSimpleName(), name, res_damage);
         }
         if (health <= 0) {
-            die("От полученного урона");
+            die("От полученного урона\n");
         }
     }
 
@@ -59,9 +59,9 @@ public class Peasant extends TemplatePerson {
     public void step(ArrayList<TemplatePerson> enemies, ArrayList<TemplatePerson> teammates) {
         
         //добавить копья копейщикам!
-        int min = Integer.MAX_VALUE;
+        
         if (!isActive) {
-            die("Уже умер");
+            die("Уже умер\n");
             return;
         }
 
@@ -82,17 +82,19 @@ public class Peasant extends TemplatePerson {
         RangeHero target_range = null;
         Spearman target_spear = null;
 
+        int min_ammo = Integer.MAX_VALUE;
+
         for (RangeHero rh: shooters) {
-            if (rh.getAmmo() < min)
-            min = rh.getAmmo();
+            if (rh.getAmmo() < min_ammo)
+            min_ammo = rh.getAmmo();
             target_range = rh;
         }
         
-        min = Integer.MAX_VALUE;
+        int min_spears = Integer.MAX_VALUE;
         
         for (Spearman sm: spearmen) {
-            if (sm.getSpears() < min)
-            min = sm.getSpears();
+            if (sm.getSpears() < min_spears)
+            min_spears = sm.getSpears();
             target_spear = sm;
         }
 
@@ -106,6 +108,6 @@ public class Peasant extends TemplatePerson {
             int new_spears = target_spear.getSpears()+1;
             target_spear.setSpears(new_spears);
         }
-        else System.out.println("Не осталось стрелков!");
+        else System.out.println("Не осталось копейщиков!");
     }
 }

@@ -28,7 +28,7 @@ public abstract class MeleeHero extends TemplatePerson {
         for (TemplatePerson tmp : heroes) {
             if (tmp.isActive)
                 heroes_pos.add(tmp.pos);
-            if (enemies.contains(tmp)) System.out.printf("\n%d %d | %f | %s ", tmp.pos.getX(), tmp.pos.getY(), pos.find_distance(tmp.pos), tmp.name);
+            //if (enemies.contains(tmp)) System.out.printf("\n%d %d | %f | %s ", tmp.pos.getX(), tmp.pos.getY(), pos.find_distance(tmp.pos), tmp.name);
         }
 
         // перебираю точки и смотрю подходящие
@@ -52,7 +52,7 @@ public abstract class MeleeHero extends TemplatePerson {
         Coord res = null;
 
         for (Coord p : possible_move) {
-            System.out.printf("\n%d %d | %f | %s ", p.getX(), p.getY(), pos.find_distance(p), target.name);
+            //System.out.printf("\n%d %d | %f | %s ", p.getX(), p.getY(), pos.find_distance(p), target.name);
             if (p.find_distance(target.pos) < pos.find_distance(target.pos) && pos.find_distance(p) <= LoS) {
                 res = p;
             }
@@ -60,7 +60,8 @@ public abstract class MeleeHero extends TemplatePerson {
 
         if (res != null) {
             pos.move_to(res);
-        } else {
+        } 
+        else {
             System.out.print("Не могу ходить туда. ");
         }
     }
@@ -134,7 +135,7 @@ public abstract class MeleeHero extends TemplatePerson {
     @Override
     public void step(ArrayList<TemplatePerson> enemies, ArrayList<TemplatePerson> teammates) {
         if (!isActive) {
-            die("Уже умер");
+            die("Уже умер\n");
             return;
         }
         TemplatePerson target = this.find_enemy(enemies, teammates);

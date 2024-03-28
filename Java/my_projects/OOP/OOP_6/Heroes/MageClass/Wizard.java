@@ -5,7 +5,6 @@ import java.util.HashMap;
 import OOP.OOP_6.src.Coord;
 import OOP.OOP_6.Heroes.TemplatePerson;
 
-
 public class Wizard extends MageHero {
 
     public Wizard(String name, Coord pos) {

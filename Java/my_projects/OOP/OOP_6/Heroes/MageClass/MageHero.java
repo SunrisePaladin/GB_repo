@@ -29,9 +29,6 @@ public abstract class MageHero extends TemplatePerson {
     public void refresh_mana() {
     };
 
-    public void heal(TemplatePerson target) {
-    };
-
     // пассивное лечение?
     @Override
     public void step(ArrayList<TemplatePerson> enemies, ArrayList<TemplatePerson> teammates) {
