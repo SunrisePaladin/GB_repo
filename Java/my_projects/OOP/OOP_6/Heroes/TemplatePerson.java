@@ -6,15 +6,16 @@ import java.util.Random;
 
 import OOP.OOP_6.src.Coord;
 import OOP.OOP_6.src.ActionInterface;
+import OOP.OOP_6.src.BattleInterface;
 
-public abstract class TemplatePerson implements ActionInterface{
+public abstract class TemplatePerson implements ActionInterface, BattleInterface{
     public String name;
     public Random rand = new Random();
     public Coord pos;
     public boolean isActive = true; //менять, когда персонаж уже мёртв
 
-    protected int health = 100;
-    protected int healthMax = 150;
+    protected int health;
+    protected int healthMax = 150; //предел здоровья
     public int initiative; //право хода
     protected int LoS; //влияет на атаки (line of sight)
     protected int attack; //атака
@@ -49,8 +50,8 @@ public abstract class TemplatePerson implements ActionInterface{
     
     public void die(String reason){
         logger += (this.getClass().getSimpleName() + " " + name + " погиб по причине: " + reason + "\n");
-        //System.out.printf("%s %s погиб по причине: %s", this.getClass().getSimpleName(), name, reason);
         isActive = false;
+        health = 0;
     }
 
     public void change_stats(HashMap<String, Integer> hm){
@@ -81,13 +82,11 @@ public abstract class TemplatePerson implements ActionInterface{
         int res_damage = damage * (rand.nextInt(100) < reflectance ? 0 : 1) - defence;
         if (res_damage <= 0) {
             logger += (this.getClass().getSimpleName() + " " + name + " не получает урона\n");
-            //System.out.printf("%s %s не получает урона\n", this.getClass().getSimpleName(), name);
             res_damage = 0;
         } 
         else {
             health -= res_damage;
             logger += (this.getClass().getSimpleName() + " " + name + " получает урон " + res_damage + "\n");
-            //System.out.printf("%s %s получает урон %d\n", this.getClass().getSimpleName(), name, res_damage);
         }
         if (health <= 0) {
             die("От полученного урона");
@@ -95,7 +94,7 @@ public abstract class TemplatePerson implements ActionInterface{
     }
 
     public void getInfo(){
-        System.out.println(logger);
+        System.out.print(logger);
         logger = "";
     }
 

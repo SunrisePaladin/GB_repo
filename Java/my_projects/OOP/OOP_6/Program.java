@@ -56,64 +56,10 @@ public class Program {
                 if (p.isActive) p.logger += (p.name + " ходит\n");
                 else continue;
                 if (TeamRed.contains(p)) {
-                    p.step(TeamBlu, TeamRed);
-                    switch (turn % 3) {
-                        case 0:
-                            if (p instanceof MageHero)
-                                ((MageHero) p).refresh_mana();
-                            if (p instanceof RangeHero)
-                                ((RangeHero) p).prepare();
-                            if (p instanceof MeleeHero)
-                                ((MeleeHero) p).rise_defence();
-                            if (p instanceof Peasant)
-                                ((Peasant) p).rise_defence();
-                            break;
-                        case 1:
-                            if (p instanceof RangeHero)
-                                ((RangeHero) p).longshot(TeamBlu.get(rand.nextInt(0, 9)));
-                            if (p instanceof Peasant)
-                                ((Peasant) p).hide();
-                            if (p instanceof Wizard)
-                                ((Wizard) p).cast_spell(TeamBlu.get(rand.nextInt(0, 9)));
-                            if (p instanceof Monk)
-                                ((Monk) p).cast_spell(TeamRed.get(rand.nextInt(0,9)));
-                            break;
-                        case 2:
-                            if (p instanceof Spearman)
-                                ((Spearman) p).throw_spear(TeamBlu.get(rand.nextInt(0, 9)));
-                            if (p instanceof Rogue)
-                                ((Rogue) p).steal(TeamBlu.get(rand.nextInt(0, 9)));
-                            break;
-                    }
+                    main_actions(turn, p, TeamBlu, TeamRed);
                 } 
                 else {
-                    p.step(TeamRed, TeamBlu);
-                    switch (turn % 3) {
-                        case 0:
-                            if (p instanceof MageHero)
-                                ((MageHero) p).refresh_mana();
-                            if (p instanceof RangeHero)
-                                ((RangeHero) p).prepare();
-                            if (p instanceof MeleeHero)
-                                ((MeleeHero) p).rise_defence();
-                            if (p instanceof Peasant)
-                                ((Peasant) p).rise_defence();
-                        case 1:
-                            if (p instanceof RangeHero)
-                                ((RangeHero) p).longshot(TeamRed.get(rand.nextInt(0, 9)));
-                            if (p instanceof Peasant)
-                                ((Peasant) p).hide();
-                            if (p instanceof Wizard)
-                                ((Wizard) p).cast_spell(TeamRed.get(rand.nextInt(0, 9)));
-                            if (p instanceof Monk)
-                                ((Monk) p).cast_spell(TeamBlu.get(rand.nextInt(0,9)));
-                            break;
-                        case 2:
-                            if (p instanceof Spearman)
-                                ((Spearman) p).throw_spear(TeamRed.get(rand.nextInt(0, 9)));
-                            if (p instanceof Rogue)
-                                ((Rogue) p).steal(TeamRed.get(rand.nextInt(0, 9)));
-                    }
+                    main_actions(turn, p, TeamRed, TeamBlu);
                 }
             }
             for (TemplatePerson person : TeamAll){
@@ -190,7 +136,6 @@ public class Program {
                     break;
             }
             boolean flag = true;
-            //System.out.print("old: ");
             for (int k=0; k<4; k++) {
                 if (condition[k] > 3) {
                     flag = false;
@@ -198,10 +143,7 @@ public class Program {
                     condition[k] = 3;
                 }
             }
-            //System.out.println();
             if (flag) it++;
-
-            //System.out.println("new: " + condition[0] + " " + condition[1] + " " + condition[2] + " " + condition[3]);
         }
     }
 
@@ -212,6 +154,38 @@ public class Program {
             }
         }
         return false;
+    }
+
+    private static void main_actions(int turn, TemplatePerson p, ArrayList<TemplatePerson> enemies, ArrayList<TemplatePerson> teammates){
+        p.step(enemies, teammates);
+        switch (turn % 3) {
+            case 0:
+                if (p instanceof MageHero)
+                    ((MageHero) p).refresh_mana();
+                if (p instanceof RangeHero)
+                    ((RangeHero) p).prepare();
+                if (p instanceof MeleeHero)
+                    ((MeleeHero) p).rise_defence();
+                if (p instanceof Peasant)
+                    ((Peasant) p).rise_defence();
+                break;
+            case 1:
+                if (p instanceof RangeHero)
+                    ((RangeHero) p).longshot(enemies.get(rand.nextInt(0, 9)));
+                if (p instanceof Wizard)
+                    ((Wizard) p).cast_spell(enemies.get(rand.nextInt(0, 9)));
+                if (p instanceof Monk)
+                    ((Monk) p).cast_spell(teammates.get(rand.nextInt(0,9)));
+                break;
+            case 2:
+                if (p instanceof Spearman)
+                    ((Spearman) p).throw_spear(enemies.get(rand.nextInt(0, 9)));
+                if (p instanceof Rogue)
+                    ((Rogue) p).steal(enemies.get(rand.nextInt(0, 9)));
+                if (p instanceof Peasant)
+                    ((Peasant) p).hide();
+                break;
+        }
     }
 
 }

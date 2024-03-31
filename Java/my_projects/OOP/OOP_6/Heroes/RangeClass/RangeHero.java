@@ -21,14 +21,16 @@ public abstract class RangeHero extends TemplatePerson{
     public int getAmmo(){
         return ammo;
     }
+
+    //использую интерфейс
+    void range_attack(TemplatePerson target){}; 
     
-    void range_attack(TemplatePerson target){};
     public void prepare(){};
     public void longshot(TemplatePerson target){};
     
     public TemplatePerson find_enemy(ArrayList<TemplatePerson> enemies, ArrayList<TemplatePerson> teammates){
-        TemplatePerson target = enemies.get(0);
-        double nearest = pos.find_distance(target.pos);
+        TemplatePerson target = null;
+        double nearest = Double.MAX_VALUE; //pos.find_distance(target.pos);
         for (TemplatePerson enemy : enemies){
             if (enemy.isActive == false) continue;
             if (pos.find_distance(enemy.pos) < nearest){
@@ -36,19 +38,12 @@ public abstract class RangeHero extends TemplatePerson{
                 target = enemy;
             }
         }
-        if (nearest <= LoS && target.isActive){
+        if (nearest <= LoS && target != null){
             logger += "Цель найдена!\n";
-            //System.out.println("Цель найдена!");
             return target;
         }
-        else if (nearest > LoS){
-            logger += "Цели вне зоны стрельбы\n";
-            //System.out.println("Цели вне зоны стрельбы");
-            return null;
-        } 
         else {
-            //System.out.println("Все цели в радиусе неактивны\n");
-            logger += "Все цели в радиусе неактивны";
+            logger += "Не получется выстрелить!\n";
             return null;
         }
     }

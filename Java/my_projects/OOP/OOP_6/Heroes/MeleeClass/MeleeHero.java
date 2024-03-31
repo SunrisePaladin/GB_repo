@@ -13,11 +13,9 @@ public abstract class MeleeHero extends TemplatePerson {
         super(name, health, attack, reflectance, pierce, defence, LoS, initiative, pos);
     }
 
-    public void rise_defence() {
-    };
+    public void rise_defence() {};
 
-    public void melee_attack(TemplatePerson target) {
-    };
+    public void melee_attack(TemplatePerson target) {};
 
     public void move(TemplatePerson target, ArrayList<TemplatePerson> enemies, ArrayList<TemplatePerson> teammates) {
         ArrayList<Coord> possible_move = new ArrayList<>();
@@ -27,7 +25,6 @@ public abstract class MeleeHero extends TemplatePerson {
         ArrayList<Coord> heroes_pos = new ArrayList<>();
         for (TemplatePerson tmp : heroes) {
             if (tmp.isActive) heroes_pos.add(tmp.pos);
-            //if (enemies.contains(tmp)) System.out.printf("\n%d %d | %f | %s ", tmp.pos.getX(), tmp.pos.getY(), pos.find_distance(tmp.pos), tmp.name);
         }
 
         // перебираю точки и смотрю подходящие
@@ -48,20 +45,16 @@ public abstract class MeleeHero extends TemplatePerson {
 
         // итоговая точка
         Coord res = null;
-
         for (Coord p : possible_move) {
-            //System.out.printf("\n%d %d | %f | %s ", p.getX(), p.getY(), pos.find_distance(p), target.name);
             if (p.find_distance(target.pos) < pos.find_distance(target.pos) && pos.find_distance(p) <= LoS) {
                 res = p;
             }
         }
-
         if (res != null) {
             pos.move_to(res);
         } 
         else {
             logger += "Не могу ходить туда\n";
-            //System.out.print("Не могу ходить туда. ");
         }
     }
 
@@ -81,12 +74,10 @@ public abstract class MeleeHero extends TemplatePerson {
         }
         if (nearest <= (double) LoS) {
             logger += "Цель найдена!\n";
-            //System.out.println("Цель найдена!");
             return target;
         } 
         else {
             logger += "Цели вне зоны действия кулаков, выдвигаюсь\n";
-            //System.out.print("Цели вне зоны действия кулаков, выдвигаюсь.");
             move(target, enemies, teammates);
             return null;
         }
@@ -95,7 +86,7 @@ public abstract class MeleeHero extends TemplatePerson {
     @Override
     public void step(ArrayList<TemplatePerson> enemies, ArrayList<TemplatePerson> teammates) {
         if (!isActive) {
-            die("Уже умер\n");
+            die("Уже умер");
             return;
         }
         TemplatePerson target = this.find_enemy(enemies, teammates);

@@ -6,14 +6,15 @@ import OOP.OOP_6.Heroes.MeleeClass.Spearman;
 import OOP.OOP_6.Heroes.RangeClass.RangeHero;
 import OOP.OOP_6.src.Coord;
 
-public class Peasant extends TemplatePerson {
+public class Peasant extends TemplatePerson{
 
     public Peasant(String name, Coord pos) {
-        super(name, 130, 25, 5, 2, 10,
+        super(name, 130, 20, 5, 2, 10,
                 1, 0, pos);
     }
 
-    // void attack(TemplatePerson target) {
+    //не используется?
+    // public void main_attack(TemplatePerson target) {
     //     int damage = attack * rand.nextInt(1, pierce);
     //     System.out.printf("%s %s готов атаковать на %d\n", this.getClass().getSimpleName(), name);
     //     target.take_damage(damage);
@@ -24,16 +25,14 @@ public class Peasant extends TemplatePerson {
         int res_damage = damage * (rand.nextInt(100) < reflectance ? 0 : 1) - 2 * defence; // имеет удвоенную защиту
         if (res_damage <= 0) {
             logger += (this.getClass().getSimpleName() + " " + name + " не получает урона\n");
-            //System.out.printf("%s %s не получает урона\n", this.getClass().getSimpleName(), name, res_damage);
             res_damage = 0;
         } 
         else {
             health -= res_damage;
             logger += (this.getClass().getSimpleName() + " " + name + " получает урон " + res_damage + "\n");
-            //System.out.printf("%s %s получает урон %d\n", this.getClass().getSimpleName(), name, res_damage);
         }
         if (health <= 0) {
-            die("От полученного урона\n");
+            die("От полученного урона");
         }
     }
 
@@ -49,8 +48,9 @@ public class Peasant extends TemplatePerson {
 
     // скрыться
     public void hide() {
-        if (reflectance < 20)
+        if (reflectance <= 20)
             reflectance += 5;
+        else reflectance = 20;
         if (rand.nextInt(2) == 1) {
             rise_defence();
         }
@@ -58,9 +58,8 @@ public class Peasant extends TemplatePerson {
 
     @Override
     public void step(ArrayList<TemplatePerson> enemies, ArrayList<TemplatePerson> teammates) {
-        
         if (!isActive) {
-            die("Уже умер\n");
+            die("Уже умер");
             return;
         }
 

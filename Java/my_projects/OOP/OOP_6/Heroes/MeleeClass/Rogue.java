@@ -16,14 +16,11 @@ public class Rogue extends MeleeHero {
     public void melee_attack(TemplatePerson target) {
         int damage = attack * rand.nextInt(1, pierce);
         logger += (this.getClass().getSimpleName() + " " + name + " готов атаковать на " + damage + "\n");
-        //System.out.printf("%s %s готов атаковать на %d", this.getClass().getSimpleName(), name, damage);
         int attacks = rand.nextInt(1, pierce+2); // может быть несколько атак
         for (int i = 0; i < attacks; i++){
             logger += ("Атака №" + i+1 + "\n");
-            //System.out.printf("\nАтака № %d: ", i+1);
             target.take_damage(damage);
         }
-        //super.melee_attack(target);
     }
 
     // усиление
@@ -35,7 +32,6 @@ public class Rogue extends MeleeHero {
             reflectance = 40;
         pierce += 1;
         attack += 10;
-        //super.rise_defence();
     }
 
     // кража статистик
@@ -66,7 +62,6 @@ public class Rogue extends MeleeHero {
         } 
         
         else {
-            //System.out.println("Кража неуспешна!");
             logger += "Кража неуспешна!\n";
         }
     }

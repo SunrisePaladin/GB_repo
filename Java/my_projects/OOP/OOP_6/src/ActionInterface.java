@@ -7,8 +7,6 @@ import java.util.ArrayList;
 //Интерфейс взаимодействия персонажей
 
 public interface ActionInterface {
-    
     //Один шаг действия персонажа
-    void step(ArrayList<TemplatePerson> enemies, ArrayList<TemplatePerson> teammates);
-    
+    public void step(ArrayList<TemplatePerson> enemies, ArrayList<TemplatePerson> teammates);
 }

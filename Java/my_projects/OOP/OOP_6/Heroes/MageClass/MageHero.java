@@ -22,14 +22,11 @@ public abstract class MageHero extends TemplatePerson {
         manaMax = 100;
     }
 
-    public void magic_attack(TemplatePerson target) {
-    };
+    public void magic_attack(TemplatePerson target) {};
 
-    public void cast_spell(TemplatePerson target) {
-    };
+    public void cast_spell(TemplatePerson target) {};
 
-    public void refresh_mana() {
-    };
+    public void refresh_mana() {};
 
     public TemplatePerson find_enemy(ArrayList<TemplatePerson> enemies, ArrayList<TemplatePerson> teammates) {
         TemplatePerson target = enemies.get(0);

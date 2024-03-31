@@ -15,9 +15,7 @@ public class Spearman extends MeleeHero {
     public void melee_attack(TemplatePerson target) {
         int damage = attack * rand.nextInt(1, pierce);
         logger += (this.getClass().getSimpleName() + " " + name + " готов атаковать на " + damage + "\n");
-        //System.out.printf("%s %s готов атаковать на %d \n", this.getClass().getSimpleName(), name, damage);
         target.take_damage(damage);
-        // super.melee_attack(target);
     }
 
     // защититься
@@ -33,7 +31,6 @@ public class Spearman extends MeleeHero {
             defence += 5;
         else
             defence = 30;
-        // super.rise_defence();
     }
 
     public void setSpears(int x) {
@@ -51,7 +48,6 @@ public class Spearman extends MeleeHero {
             int num_throws = rand.nextInt(1, spears);
             for (int i = 0; i < num_throws; i++) {
                 logger += "Атака копьём №" + i + "\n";
-                //System.out.printf("Атака копьём %d\n", i + 1);
                 target.take_damage(damage);
                 spears -= 1;
             }

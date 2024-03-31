@@ -16,9 +16,7 @@ public class Monk extends MageHero {
     public void magic_attack(TemplatePerson target) {
         int damage = attack;
         logger += (this.getClass().getSimpleName() + " " + name + " готов атаковать на " + damage + "\n");
-        //System.out.printf("%s %s готов атаковать на %d\n", this.getClass().getSimpleName(), name, damage);
         target.take_damage(damage);
-        // super.magic_attack(target);
     }
 
     // усиление
@@ -54,7 +52,6 @@ public class Monk extends MageHero {
         }
         else {
             logger += "Усиление неуспешно!";
-            //System.out.println("Усиление неуспешно!");
         }
     }
 }
