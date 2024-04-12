@@ -1,0 +1,8 @@
+{
+    "java.format.settings.url": "eclipse-formatter.xml",
+    "java.project.sourcePaths": [
+        "my_projects/ООП_5/__MACOSX/Lesson_11/Ex001Calc",
+        "my_projects/ООП_5/Lesson_11",
+        "my_projects/OOP/OOP_5"
+    ]
+}
