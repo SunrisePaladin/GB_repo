@@ -1,0 +1,14 @@
+#!/bin/bash
+#-p для красоты запроса
+read -p "Введите директорию: " DIR_PATH
+
+if [ -e $DIR_PATH ]
+    then
+        echo 'Директория найдена'
+        cd $DIR_PATH
+        rm -fv *.bak *.tmp *.backup
+        echo 'Удалено!'
+    else
+        echo 'Путь не существует или есть опечатка'
+        exit -1
+fi

@@ -1,0 +1,61 @@
+Using username "vboxuser".
+Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 6.5.0-14-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+Expanded Security Maintenance for Applications is not enabled.
+
+16 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+21 additional security updates can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+Last login: Wed May 15 15:59:54 2024 from 172.23.49.115
+vboxuser@Penguin:~$ mc
+
+  Left     File     Command     Options     Right
+┌<─ ~ ─────────────────────────────────────────────────────────────────────────.[^]>┐┌<─ ~ ──────────────────────────────────────────────────────────────────────────.[^]>┐
+│.n                           Name                             │ Size  │Modify time ││.n                            Name                             │ Size  │Modify time │
+│/..                                                           │UP--DIR│сен  1  2023││/..                                                            │UP--DIR│сен  1  2023│
+│/.cache                                                       │   4096│мая 15 15:52││/.cache                                                        │   4096│мая 15 15:52│
+│/.config                                                      │   4096│мая 15 15:52││/.config                                                       │   4096│мая 15 15:52│
+│/.dotnet                                                      │   4096│дек 16 20:02││/.dotnet                                                       │   4096│дек 16 20:02│
+│/.gnupg                                                       │   4096│дек 16 18:56││/.gnupg                                                        │   4096│дек 16 18:56│
+│/.local                                                       │   4096│дек 17 22:41││/.local                                                        │   4096│дек 17 22:41│
+│/.mozilla                                                     │   4096│сен 15  2023││/.mozilla                                                      │   4096│сен 15  2023│
+│/.npm                                                         │   4096│дек 19 11:47││/.npm                                                          │   4096│дек 19 11:47│
+│/.pki                                                         │   4096│дек 16 18:56││/.pki                                                          │   4096│дек 16 18:56│
+│/.ssh                                                         │   4096│сен  2  2023││/.ssh                                                          │   4096│сен  2  2023│
+│/.thunderbird                                                 │   4096│сен 15  2023││/.thunderbird                                                  │   4096│сен 15  2023│
+│/.var                                                         │   4096│сен  3  2023││/.var                                                          │   4096│сен  3  2023│
+│/.vscode                                                      │   4096│дек 16 18:56││/.vscode                                                       │   4096│дек 16 18:56│
+│/Desktop                                                      │   4096│сен  1  2023││/Desktop                                                       │   4096│сен  1  2023│
+│/Documents                                                    │   4096│дек 16 18:32││/Documents                                                     │   4096│дек 16 18:32│
+│/Downloads                                                    │   4096│янв 17 23:12││/Downloads                                                     │   4096│янв 17 23:12│
+│/Kursach                                                      │   4096│ноя 10  2023││/Kursach                                                       │   4096│ноя 10  2023│
+│/Music                                                        │   4096│сен  1  2023││/Music                                                         │   4096│сен  1  2023│
+│/OpenFOAM                                                     │   4096│сен  4  2023││/OpenFOAM                                                      │   4096│сен  4  2023│
+│/Pictures                                                     │   4096│сен  8  2023││/Pictures                                                      │   4096│сен  8  2023│
+│/Public                                                       │   4096│сен  1  2023││/Public                                                        │   4096│сен  1  2023│
+│/Templates                                                    │   4096│сен  1  2023││/Templates                                                     │   4096│сен  1  2023│
+│/Videos                                                       │   4096│сен  3  2023││/Videos                                                        │   4096│сен  3  2023│
+│/snap                                                         │   4096│дек 17 10:55││/snap                                                          │   4096│дек 17 10:55│
+│ .bash_history                                                │  26247│мая 15 15:59││ .bash_history                                                 │  26247│мая 15 15:59│
+│ .bash_logout                                                 │    220│сен  1  2023││ .bash_logout                                                  │    220│сен  1  2023│
+│ .bashrc                                                      │   3806│сен  4  2023││ .bashrc                                                       │   3806│сен  4  2023│
+│ .bashrc~                                                     │     34│сен  1  2023││ .bashrc~                                                      │     34│сен  1  2023│
+│ .lesshst                                                     │     20│мая 15 15:23││ .lesshst                                                      │     20│мая 15 15:23│
+│ .pam_environment                                             │    357│сен  4  2023││ .pam_environment                                              │    357│сен  4  2023│
+│ .profile                                                     │    807│сен  1  2023││ .profile                                                      │    807│сен  1  2023│
+│ .vboxclient-clipboard-tty2-control.pid                       │      6│мая 15 20:43││ .vboxclient-clipboard-tty2-control.pid                        │      6│мая 15 20:43│
+│ .vboxclient-clipboard-tty2-service.pid                       │      5│мая 15 20:43││ .vboxclient-clipboard-tty2-service.pid                        │      5│мая 15 20:43│
+│ .vboxclient-draganddrop-tty2-control.pid                     │      6│мая 15 20:43││ .vboxclient-draganddrop-tty2-control.pid                      │      6│мая 15 20:43│
+│ .vboxclient-draganddrop-tty2-service.pid                     │      5│мая 15 20:43││ .vboxclient-draganddrop-tty2-service.pid                      │      5│мая 15 20:43│
+│ .vboxclient-hostversion-tty2-control.pid                     │      6│мая 15 20:43││ .vboxclient-hostversion-tty2-control.pid                      │      6│мая 15 20:43│
+│ .vboxclient-seamless-tty2-control.pid                        │      6│мая 15 20:43││ .vboxclient-seamless-tty2-control.pid                         │      6│мая 15 20:43│
+│ .vboxclient-seamless-tty2-service.pid                        │      5│мая 15 20:43││ .vboxclient-seamless-tty2-service.pid                         │      5│мая 15 20:43│
+│ .vboxclient-vmsvga-session-tty2-control.pid                  │      6│мая 15 20:43││ .vboxclient-vmsvga-session-tty2-control.pid                   │      6│мая 15 20:43│
+│ .vboxclient-vmsvga-session-tty2-service.pid                  │      5│мая 15 20:43││ .vboxclient-vmsvga-session-tty2-service.pid                   │      5│мая 15 20:43│
